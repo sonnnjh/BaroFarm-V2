@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/UserLayout.css}">
+<body>
+	<header>
+		<div class="info">
+			<span><a th:href="@{home}">관리자</a></span> <span><a th:href="@{login_main}">로그인</a></span> <span><a th:href="@{/mypage}">마이페이지</a></span>
+		</div>
+		<div class="logo">
+			<img alt="로고" src="/img/tree.png" class="tree">
+		</div>
+		<div class="home">
+			<span>BaroFarm</span>
+		</div>
+	</header>
+	<nav>
+		<div class="homes">
+			<span class="home"><a th:href="@{/}">바로팜</a></span>
+		</div>
+		<div class="category">
+			<span class="dropdown"> <a th:href="@{view(product_cate='농산')}">농산물</a>
+				<div class="dropdownContent">
+					<a th:href="@{middleview(product_middle='과일')}" >과일</a> <a th:href="@{middleview(product_middle='채소')}" >채소</a> <a th:href="@{middleview(product_middle='곡물')}" >쌀/잡곡</a>
+				</div>
+			</span> 
+			<span class="dropdown"> <a th:href="@{view(product_cate='수산')}" >수산물</a>
+				<div class="dropdownContent">
+					<a th:href="@{middleview(product_middle='생선')}">생선</a> <a th:href="@{middleview(product_middle='해물')}" >해물</a> <a th:href="@{middleview(product_middle='갑각류')}" >갑각류</a>
+				</div>
+			</span> 
+			<span class="dropdown"> <a th:href="@{view(product_cate='축산')}">축산물</a>
+				<div class="dropdownContent">
+					<a th:href="@{middleview(product_middle='소')}" >소고기</a> <a th:href="@{middleview(product_middle='돼지')}" >돼지고기</a> <a th:href="@{middleview(product_middle='양')}" >양고기</a>
+				</div>
+			</span>
+		</div>
+	</nav>
+		<aside>
+			<ul>
+				<div class="list">
+					<li><a th:href="@{mypage}">나의 정보 조회</a></li>
+					<li><a th:href="@{mypage}" class="second">회원정보 수정</a></li>
+				</div>
+				<div class="list">
+					<li><a th:href="@{order}">나의 쇼핑 정보</a></li>
+					<li><a th:href="@{order}" class="second">주문배송 조회</a></li>
+					<li><a th:href="@{basket}" class="second">장바구니</a></li>
+				</div>
+				<div class="list">
+					<li><a th:href="@{notice}">고객센터</a></li>
+					<li><a th:href="@{notice}" class="second">공지사항</a></li>
+				</div>
+			</ul>
+		</aside>
+	<script th:src="@{/js/product/add.js}" type="text/javascript" defer></script>
+</body>
+</html>

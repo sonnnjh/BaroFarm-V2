@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상세보기</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/UserProduct.css}">
+<body>
+	<header th:replace="~{UserLayout::header}"></header>
+	<nav th:replace="~{UserLayout::nav}"></nav>
+	<main>
+		<div class="m3">
+			<div class="productImg">
+				<img alt="상품이미지" src="/img/그림2.png" class="img">
+			</div>
+			<div class="productDetail" th:each="fruit:${detailVo}">
+				<div>
+					<form action="#">
+						<div class ="product_name" name="product_name">[[${fruit.product_name}]]</div>
+						<div class ="product_price">가격 : [[${#numbers.formatInteger(fruit.product_price, 3, 'COMMA')}]]원</div>
+						<div class ="product_origin">원산지 : [[${fruit.product_origin}]]</div>
+						<div class ="product_deliveryCost">배송비 : 무료</div>
+						<div class ="product_cnt">수량: <input type="button" value="+" class="cntButton"> 1 <input type="button" value="-" class="cntButton"></div>
+						<div><input type ="submit" value="장바구니" class ="product_cart"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

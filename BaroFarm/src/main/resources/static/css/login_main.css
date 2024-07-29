@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+	text-align: center;
+}
+
+.title {
+	color: rgba(44, 74, 58);
+	font-weight: bolder;
+	font-size: 50px;
+}
+.hr{
+	width: 50%;
+	height:10px;
+	background-color: rgb(44,74,58);
+	border: none;
+}
+
+button {
+  background-color: rgb(44,74,58);
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.inputWindow{
+	height:30px;
+}
+

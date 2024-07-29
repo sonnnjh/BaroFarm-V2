@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>상품 등록</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<!-- css --><!-- 레이아웃 적용 개발자:son -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/AdminLayout.css}">
+<!-- JS 
+<script th:src="@{/js/home.js}" defer></script> -->
+
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	<main>
+		<div class="m1">
+			<font class="title"> 상품 등록 </font>
+		</div>
+		<hr class="hr" noshade>
+		<div class="form">
+			<div class="m2">
+				<div>대분류</div>
+				<div>중분류</div>
+				<div>상품명</div>
+				<div>상품가격</div>
+				<div>원산지</div>
+				<div>재고</div>
+			</div>
+			<div class="m3">
+				<form action="addSave" method="post">
+					<div><select name="product_cate" id="product_cate">
+					   	<option value="수산" >수산</option>
+					    <option value="축산" >축산</option>
+					    <option value="농산" >농산</option>
+					</select></div>
+					 <div><select name="product_middle" id="product_middle">
+					</select></div> 
+					
+					<div><input type ="text" name="product_name" autocomplete="off"></div>
+					<div><input type ="text" name="product_price" autocomplete="off"></div>
+					<div><input type ="text" name="product_origin" autocomplete="off"></div>
+					<div><input type ="text" name="product_stock"></div>
+					<div><input type ="submit" value="상품등록"></div>
+				</form>
+			</div>
+		</div>
+	</main>
+<script th:src="@{/js/product/add.js}" type="text/javascript" defer></script> 
+</body>
+</html>

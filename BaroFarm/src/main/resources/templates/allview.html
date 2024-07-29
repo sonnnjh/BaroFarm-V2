@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상품 조회</title>
+</head>
+<!-- css -->
+<!-- 레이아웃 적용 개발자:son -->
+<link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout2.css}">
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	<main>
+		<div class="m1">
+			<font class="title"> 상품 전체보기 </font>
+			
+		</div>
+		<div class="excel">
+			<form action="excelDown">
+				<input type="submit" value="엑셀 다운로드" >
+			</form>		
+		</div>
+		
+		
+		<hr class="hr" noshade>
+		<hr class="hr_1">
+		<div class="fish_table">
+			<div class="fish_table_row">
+				<div class="fish_table_cell2">
+					<input type="checkbox" th:value="${product_no}" name="checkList" onclick="selectAll(this)">
+				</div>
+				<div class="fish_table_cell2">
+					<p>번호</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>대분류</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>중분류</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>상품명</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>상품가격</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>원산지</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>재고</p>
+				</div>
+				<div class="fish_table_cell2">
+					<p>수정</p>
+				</div>
+				<div class="fish_table_cell2">
+					<p>삭제</p>
+				</div>
+			</div>
+		</div>
+		<hr class="hr_1">
+
+		<form action="/checkProduct" method="post">	<!-- 선택삭제를 위한 form추 -->
+			<div class="fish_table" th:each="p:${allList}">
+				<div class="fish_table_row">
+					<div class="fish_table_cell2">
+						<input type="checkbox" name="checkList" th:value="${p.product_no}">	<!-- 체크박스 추 -->
+					</div>
+					<div class="fish_table_cell2" th:text="${p.product_no}"></div>
+					<div class="fish_table_cell" th:text="${p.product_cate}"></div>
+					<div class="fish_table_cell" th:text="${p.product_middle}"></div>
+					<div class="fish_table_cell" th:text="${p.product_name}"></div>
+					<div class="fish_table_cell"
+						th:text="${#numbers.formatInteger(p.product_price,3,'COMMA')} +원 ">
+					</div>
+					<div class="fish_table_cell" th:text="${p.product_origin}"></div>
+					<div class="fish_table_cell" th:text="${p.product_stock} +개 ">
+					</div>
+					<div class="fish_table_cell2">
+						<a th:href="@{'/modify/' + ${p.product_no}}">수정</a>
+					</div>
+					<div class="fish_table_cell2">
+						<a th:href="@{'/delete/' + ${p.product_no}}"
+							onclick="return delchk()">삭제</a>
+					</div>
+				</div>
+				<hr class="hr_2" align="center">
+			</div>
+			<input type="submit" value="선택삭제" id="deleteBtn" onclick="return delchk()">
+		</form>
+		<!-- 페이징 완료  담당자:meat-->
+	</main>
+	<div class="page">
+		<tr>
+			<td colspan=4 align=center>
+				<div
+					th:each="idx : ${#numbers.sequence(pagevo.startPage, pagevo.endPage)}">
+					<a class="page" th:href="@{'/allview?page=' + ${idx}}"> <span
+						th:if="${idx == pagevo.page }">[</span> <span th:text="${idx}">idx</span>
+						<span th:if="${idx == pagevo.page}">]</span>
+					</a>
+				</div>
+			</td>
+		</tr>
+	</div>
+	<script th:src="@{/js/product/add.js}" type="text/javascript" defer></script>
+</body>
+</html>

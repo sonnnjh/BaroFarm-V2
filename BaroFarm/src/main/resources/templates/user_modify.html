@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 수정</title>
+</head>
+<!-- css 수정 완료-->
+<link th:href="@{/css/user_modify.css}" rel="stylesheet" type="text/css"/>
+<!-- JS -->
+<script th:src="@{/js/home.js}" defer></script>
+
+<body>
+
+<font class="title"> 회원 정보 수정 </font>
+<hr class="hr">
+
+	<form action="/user_modSave" method="post">
+	
+	  	아이디 	<input type ="text" name="user_id" th:value="${umodiVo.user_id}" readonly> <br>	
+	  	비밀번호 	<input type ="password" name="user_pass" placeholder="변경 비밀번호를 입력하세요" required> <br> 
+		이름		<input type ="text" name="user_name" th:value="${umodiVo.user_name}" readonly> <br>
+		이메일		<input type ="text" name="user_email" th:value="${umodiVo.user_email}" required> <br>
+		연락처		<input type ="text" name="user_phone" th:value="${umodiVo.user_phone}" required> <br>
+		
+		<label>성별
+					<input type ="radio" name="user_gender" value="남자" th:checked="${umodiVo.user_gender == '남자'}" required>남자 
+					<!-- value="남자"는 radio 버튼 값을 나타낸다. 선택 후 submit이 발동되면 서버에 "남자"를 전송한다.-->
+					<!--  th:checked DB에 저장된 정보가 "남자"인지 확인하여 미리 체크를 해준다 // 남자일 경우 true 값을 반환-->
+					<input type ="radio" name="user_gender" value="여자" th:checked="${umodiVo.user_gender== '여자'}">여자<br>				
+		</label>
+				<input type ="submit" value="회원정보 수정">
+	</form>
+
+</body>
+</html>

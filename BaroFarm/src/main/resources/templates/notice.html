@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/mypage.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/UserLayout.css}">
+<body>
+	<header th:replace="~{UserLayout::header}"></header>
+	<nav th:replace="~{UserLayout::nav}"></nav>
+	<article>
+		<h3>마이페이지</h3>
+		<span th:text="${session.user_name}"></span><span>님 안녕하세요</span>
+	</article>
+	<main>
+		<aside th:replace="~{UserLayout::aside}"></aside>
+		<div class="member">
+			<div class="containernotice">
+				<h4 id=text1>공지사항</h4>
+					<table border="1" id="notice">
+						<thead>
+							<th>글번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>001</td> <!--notice_no:글번호  -->
+								<td>운영방침</td> <!-- notice_title:제목 -->
+								<td>2024.06.23</td> <!-- notice_date:등록일 -->
+							</tr>
+						</tbody>
+					</table>
+			</div>
+		</div>
+	</main>
+</body>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body{
+	text-align: center;
+}
+.title{
+color:rgba(44,74,58);
+font-weight: bolder;
+font-size: 50px;
+	
+}
+.contents{
+color:rgba(44,74,58);
+font-weight: inherit;
+font-size: 20px;	
+}
+
+.cate_font{
+color:rgba(44,74,58);
+font-weight: inherit;
+font-size: 20px;		
+}
+
+.hr{
+	width: 50%;
+	height:10px;
+	background-color: rgb(44,74,58);
+	border: none;
+}
+
+select[readonly]{
+	background-color: #ddd;
+	pointer-events: none;
+}

@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+
+/*레이아읏 개발중.. 개발자 :son*/
+*{
+	font-family: Pretendard SemiBold;
+}
+body{
+	margin: 0;
+	margin-top: 0;
+	background-color: rgb(245, 241, 206);
+}
+header {
+	color: rgb(44,74,58);
+	background-color: rgb(245, 241, 206);
+	/*border: 0.05rem solid black;*/
+}
+header .logo{
+	display: flex;
+	justify-content: center;
+}
+header .tree{
+	width: 10rem;
+	/*border: 0.05rem solid green;*/
+}
+header .home {
+	font-family: Pretendard ExtraBold;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.home span {
+	font-family: Pretendard ExtraBold;
+	font-size: 1.3rem;
+}
+header .info {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 0.5rem;
+	/*border: 0.05rem solid green;*/
+}
+.info a {
+	margin-left: 1rem;
+	text-decoration: none;
+	color: rgb(44,74,58);
+	/*border: 0.05rem solid green;*/
+}
+nav {
+	display: flex;
+	height: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(44,74,58);
+	/*border: 0.05rem solid blue;*/
+}
+nav .home{
+	color: white;
+}
+nav a {
+	margin-left: 3rem;
+	text-decoration: none;
+	color: white;
+	/*border: 0.05rem solid blue;*/
+}
+nav .category{
+	margin-right: 3rem;
+	color: white;
+	display: flex;
+	gap: 0.5rem; /* 드롭다운 카테고리 간격 */ 
+}
+
+nav a:last-child, .info a:last-child {
+	margin-right: 1rem;
+}
+nav .dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: rgb(44,74,58);
+    z-index: 1;
+}
+nav .dropdownContent a {
+    color: white;
+    padding: 12px 12px;
+    text-decoration: none;
+    display:flex;
+   	margin-left: 2rem;
+}
+nav .dropdown:hover .dropdownContent {
+    display: block;
+}
+
+main .m1{
+	display: flex;
+	justify-content: center;
+}
+
+main .m1 div {
+	width: 8rem;
+	height: 15rem;
+	margin: 1rem;
+	color: white;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+}
+main .m1 .m1_div1{
+	background-color: rgb(37,61,47);
+}
+main .m1 .m1_div2{
+	background-color: rgb(44,75,53);
+}
+main .m1 .m1_div3{
+	background-color: rgb(46,88,58);
+}
+main .m1 .m1_div4{
+	background-color: rgb(56,106,70);
+}
+main .m1 .m1_div1 span, main .m1 .m1_div2 span, main .m1 .m1_div3 span, main .m1 .m1_div4 span{
+	margin-top: 1rem;
+}
+main .m1_div1_img{
+	width: 90%;
+	background-color: red;
+}
+main .m2 {
+	display: flex;
+	justify-content: center;
+	width: 23rem;
+	height: 10rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 2rem;
+}
+main .m2 .m2_1{
+	color: rgb(44,74,58);
+	font-size: 5rem;
+	margin-top: 0.8rem;
+}
+main .m2 .m2_2{
+	color: rgb(44,74,58);
+	font-family: Pretendard ExtraBold;
+	margin-top: 2rem;
+	margin-left: 1rem;
+}
+main .mainImg{
+	width: 100%;
+	display: block;
+}
+main .m3{
+	display:flex;
+	justify-content:center;
+}
+main .m3_img{
+	width: 41.5%;
+	margin-bottom: 1rem;
+}
+main .m4{
+	display:flex;
+	justify-content:center;
+	margin-bottom: 3rem;
+}
+main .m4 p{
+	color: white;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	line-height: 2em;
+}
+main .m4 div{
+	background-color: rgb(44,75,53);
+	width: 20%;
+	height:23.65rem;
+	margin-right: 1rem;
+}
+main .m4_img{
+	width: 20%;
+	height: 20%;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.barofarm.fish.dao.IF_UserDao">
+
+<insert id="join" parameterType="com.barofarm.fish.vo.UserVo">
+
+insert into user values(
+#{user_id},#{user_pass},#{user_email},#{user_name},#{user_phone},#{user_gender},default
+)
+</insert>
+
+<select id="view" resultType="com.barofarm.fish.vo.UserVo">
+
+select *from user
+
+</select>
+
+<delete id="del" parameterType="String">
+delete from user where user_id=#{user_id}
+</delete>
+
+<select id="mod" resultType="com.barofarm.fish.vo.UserVo">
+select * from user where user_id=#{user_id}
+</select>
+
+<update id="modsave" parameterType="com.barofarm.fish.vo.UserVo">
+update user set user_id=#{user_id},user_pass=#{user_pass},user_email=#{user_email},user_name=#{user_name},user_phone=#{user_phone},user_gender=#{user_gender}
+where user_id=#{user_id}
+</update>
+
+<!-- 회원 가입 ID 중복체크  -->
+
+
+
+<select id="idChk" resultType="int" parameterType="com.barofarm.fish.vo.UserVo">
+<!-- 중복 체크 했을 때 데이터베이스에 있으면 숫자로 구분 // 0 또는 1  -->
+select count(user_id) from user where user_id=#{user_id}
+</select>
+
+
+
+</mapper>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/mypage.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/UserLayout.css}">
+<body>
+	<header th:replace="~{UserLayout::header}"></header>
+		<nav th:replace="~{UserLayout::nav}"></nav>
+	<article>
+		<h3>마이페이지</h3>
+		<span th:text="${session.user_name}"></span><span>님 안녕하세요</span>
+	</article>
+	<main>
+		<aside th:replace="~{UserLayout::aside}"></aside>
+		<div class="member">
+			<div class="container">
+				<h4>회원 정보 수정</h4>
+				<form action="memberUpdate" method="get">
+					<label>회원정보</label> 
+						<input type="text" th:value="${session.user_id}" name="user_id"> 
+ 						<input type="password" placeholder="*****" name="user_pass"> 
+					<label>주소 정보</label> 
+						<input type="text"  placeholder="주소"  name="address"> 
+					<button type="submit" class="btn">수정</button>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

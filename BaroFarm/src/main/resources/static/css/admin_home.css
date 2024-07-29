@@ -1,0 +1,160 @@
+@charset "EUC-KR";
+
+*{
+	font-family: Pretendard SemiBold;
+}
+
+body{
+	margin: 0;
+	margin-top: 0;
+}
+
+
+#wrapper{
+	
+	height:300px;
+	display:grid;
+	grid-template-columns:170px 1fr;
+	/* | columns // คั rows*/
+	grid-template-rows:100px 1fr 250%;
+	grid-template-areas:
+	"box1 box1 box1"
+	"box2 box3 box3"
+	"box2 box3 box3"
+}
+.logo{
+	float: left;
+	/*  background-color: lime; */
+	height: 60px;
+	width: 100px;
+	margin-left:30px;
+	background-image: url(/img/tree.png);
+	background-size: 100% 100%;
+}
+.box1{
+	/* background-color: #3689ff; */
+	grid-area:box1;
+	text-align: center;
+	margin-top:20px;
+	
+}
+.box1 > span{
+	font-size: 40px;
+	color: rgb(44,74,58);
+
+}
+.box2{
+/*  	background-color: #00cf12; */
+	background-color:  rgb(44,74,58);
+	grid-area:box2;
+	height: 795px;
+}
+.box3{
+	background-color:#F0FFF0;
+	grid-area:box3;
+}
+.content_1{
+	display: grid;
+	grid-template-columns: 350px 350px 350px;
+	grid-row:repeat(3,200px);
+	margin-left:10px;
+	margin-top:20px;
+	margin-right:10px;
+ /*   	background-color: aqua; */ 
+	height: 250px;
+}
+
+.content_2{
+	display: grid;
+	grid-template-columns: 500px 500px;
+	grid-row: repeat(1,300px);
+	margin-left:10px;
+	margin-top:10px;
+	margin-right:10px;
+/* 	background-color: fuchsia;
+ */	height: 200px;
+}
+
+.content_3{
+	margin-left:10px;
+	margin-top:10px;
+	margin-right:10px;
+	/* background-color:orange; */
+	height: 280px;
+}
+
+.nav{
+	list-style-type: none;
+	line-height: 50px;
+
+}
+.menu_bar > a{
+	text-decoration: none;
+	color:white;
+}
+
+.admin{
+	/*  background-color: white;*/
+	float:right;
+	margin-right:20px;
+	margin-top:50px;
+}
+
+.admin_bar > a{
+	text-decoration: none;
+	color:rgb(44,74,58);
+}
+.content_1_1{
+	border: 1px solid  rgb(44,74,58);
+	border-radius: 2em;
+	margin-left: 40px;
+	margin-right: 10px;
+	width: 300px;
+	text-align: center;
+}
+
+
+ table{
+	margin-left:17px;
+/* 	border: 1px solid black;
+ 	border-collapse: collapse;  */
+	}
+
+#test{
+	width: 150px;
+}
+.tr_1{
+	text-align: right;	
+}
+.tr_2{
+	text-align: left;
+}
+
+.content_2_1{
+	border: 1px solid  rgb(44,74,58);
+	border-radius: 2em;
+	margin-left: 50px;
+	margin-right: 10px;
+	width: 480px;
+	text-align: center;
+
+}
+hr{
+	height : 2px;
+	background-color:#BDBDBD;
+}
+.content_3_1{
+	border: 1px solid  rgb(44,74,58);
+	border-radius: 2em;
+	margin-left: 50px;
+	margin-right: 10px;
+	width: 980px;
+	
+}
+h2{
+	text-align: center;
+}
+a{
+	color:black;
+	text-decoration: none;
+}

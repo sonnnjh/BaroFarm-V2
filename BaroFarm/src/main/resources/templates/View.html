@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>농산물 전체보기</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/UserProduct.css}">
+<body>
+	<header th:replace="~{UserLayout::header}"></header>
+	<nav th:replace="~{UserLayout::nav}"></nav>
+	<main >
+		<!-- <div class="m1">
+			<div>
+				<a class="title" th:href="@{view(product_cate='농산')}" id="fruit"><span class="text">농산물</span></a>
+			</div>
+			<div class="m1_a">
+				<a th:href="@{middleview(product_middle='과일')}" id="fruit_fruit">과일 |</a>
+				<a th:href="@{middleview(product_middle='채소')}" id="fruit_vage">채소 |</a>
+				<a th:href="@{middleview(product_middle='곡물')}" id="fruit_grains">쌀/잡곡</a>
+			</div>
+		</div> -->
+		<div class="m2" >
+			<div class="grid" th:each="product:${Vo}">
+				<div class="img">
+					<a th:href="@{detail(product_no=${product.product_no})}"><img alt="상품사진" src="/img/그림2.png" class="proImg" ></a>
+				</div>
+				<div class="detail">
+					<a th:href="@{detail(product_no=${product.product_no})}" class="product_name">상품명 : [[${product.product_name}]]</a>
+					<div class="product_price">상품 가격 : [[${#numbers.formatInteger(product.product_price, 3, 'COMMA')}]]원</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

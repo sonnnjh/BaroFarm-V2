@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 관리</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout2.css}">
+<link th:href="@{/css/user_view.css}" rel="stylesheet" type="text/css" />
+
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	<font id="title"> 회원 정보 </font>
+	<hr class="hr">	<br>
+	<hr class="hr_1">
+	<div class="fish_table">
+		<div class="fish_table_row">
+			
+			<div class="fish_table_cell">
+				<p>회원 ID</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>회원 이메일</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>회원 이름</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>회원 연락처</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>회원 성별</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>수정</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>삭제</p>
+			</div>
+		</div>
+	</div>
+	
+	<hr class="hr_1">
+		
+		<div class="fish_table" th:each="u:${user}">
+		
+		<div class="fish_table_row">
+			<div class="fish_table_cell" th:text="${u.user_id}"></div>
+			<div class="fish_table_cell" th:text="${u.user_email}"></div>
+			<div class="fish_table_cell" th:text="${u.user_name}"></div>
+			<div class="fish_table_cell" th:text="${u.user_phone}"></div>
+			<div class="fish_table_cell" th:text="${u.user_gender}"></div>
+		
+			<div class="fish_table_cell">		
+			<a th:href="@{'/mod/' + ${u.user_id}}">수정</a></div>
+			<div class="fish_table_cell">
+			<a th:href="@{'/del/' + ${u.user_id}}">삭제</a></div>
+			
+		</div>
+		
+		<hr class="hr_2" align="center">
+	</div>
+
+</body>
+</html>

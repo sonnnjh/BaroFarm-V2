@@ -20,9 +20,10 @@ public class LoginController {
 	@Autowired
 	IF_LoginService logService;
 	
-	@GetMapping("login_main")
 	// 로그인 메인
+	@GetMapping("login_main")
 	public String loginMain() {
+		
 		return "login_main";
 	}
 	

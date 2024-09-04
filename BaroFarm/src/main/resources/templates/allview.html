@@ -6,7 +6,7 @@
 </head>
 <!-- css -->
 <!-- 레이아웃 적용 개발자:son -->
-<link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout2.css}">
+<link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout.css}">
 
 <body> 
 	<header th:replace="~{AdminLayout::header}"></header>
@@ -17,16 +17,16 @@
 		<div class="m1">
 			<font class="title"> 상품 전체보기 </font>
 		</div>
-		
-		<div class="excel">
-			<form action="excelDown">
-				<input type="submit" value="엑셀 다운로드" >
-			</form>		
-		</div>
-		
-		
 		<hr class="hr" noshade>
+		
+		<form action="excelDown" class="excel" magin>
+			<input type="submit" value="상품 엑셀 다운로드" >
+		</form>		
+		<a th:href="@{add}"><button>상품 등록</button></a>	
+		
+		
 		<hr class="hr_1">
+		
 		<div class="fish_table">
 			<div class="fish_table_row">
 				<div class="fish_table_cell2">

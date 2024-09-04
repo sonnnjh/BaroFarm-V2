@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" th:href="@{css/admin_home.css}">
-<title>Admin</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/AdminLayout.css}">
+
+<title>BaroFarm Admin</title>
 
 </head>
 <body>
-
-		<div id="wrapper">
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+		<!-- <div id="wrapper">
 			<div class="box1">
 					<div class=logo>
 						
@@ -33,7 +36,7 @@
 					<li class=menu_bar><a href="login_main">로그인</a></li>	
 					<li class=menu_bar><a href="/u_view">관리자 전체보기</a></li>
 				</ul>
-			</div>
+			</div> -->
 				
 			<div class="box3">
 				<div class=content>

@@ -7,20 +7,32 @@
 <link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout.css}">
 <body>
 	<header th:fragment="header">
+		<div class="info">
+			<span><a th:href="@{/}">소비자</a></span> <span><a th:href="@{login_main}">로그인</a></span>
+		</div>
+		
+		<!-- <div class=admin>
+			<span class=admin_bar th:text="${session.user_name}"></span>
+			<span class=admin_bar><a href="logout">로그아웃</a></span> !!로그인&로그아웃 글씨 변경되게!!
+		</div> -->
 		<div class="logo">
 			<img alt="로고" src="/img/tree.png" class="tree">
 		</div>
 		<div class="home">
-			<span>BaroFarm</span>
+			<span>BaroFarm Admin</span>
 		</div>
 	</header>
 	<nav th:fragment="nav">
 		<div class="category">
-			<span><a href=/add>상품 등록</a></span> <span><a href=/allview>전체보기/수정/삭제</a></span>
-			<span><a href=/u_view>회원정보 조회</a></span> <span><a href=#>공지사항
-					관리</a></span>
+			<span><a th:href="@{home}">홈으로</a></span>
+			<span><a href="/allview">상품 전체보기</a></span>
+			<span><a th:href="@{#}">공지사항 전체보기</a></span>
+			<span><a th:href="@{u_view}">관리자 전체보기</a></span>
 		</div>
+		
 	</nav>
+
+	
 	<main></main>
 </body>
 </html>

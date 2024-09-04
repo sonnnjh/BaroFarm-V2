@@ -10,29 +10,8 @@ body{
 }
 
 
-#wrapper{
-	
-	height:300px;
-	display:grid;
-	grid-template-columns:170px 1fr;
-	/* | columns // คั rows*/
-	grid-template-rows:100px 1fr 250%;
-	grid-template-areas:
-	"box1 box1 box1"
-	"box2 box3 box3"
-	"box2 box3 box3"
-}
-.logo{
-	float: left;
-	/*  background-color: lime; */
-	height: 60px;
-	width: 100px;
-	margin-left:30px;
-	background-image: url(/img/tree.png);
-	background-size: 100% 100%;
-}
-.box1{
-	/* background-color: #3689ff; */
+/* .box1{
+	background-color: #3689ff;
 	grid-area:box1;
 	text-align: center;
 	margin-top:20px;
@@ -44,27 +23,32 @@ body{
 
 }
 .box2{
-/*  	background-color: #00cf12; */
+ 	background-color: #00cf12;
 	background-color:  rgb(44,74,58);
 	grid-area:box2;
 	height: 795px;
-}
+} */
 .box3{
 	background-color:#F0FFF0;
-	grid-area:box3;
 }
 .content_1{
+	display: flex;
+	justify-content: center;
+	
 	display: grid;
 	grid-template-columns: 350px 350px 350px;
 	grid-row:repeat(3,200px);
-	margin-left:10px;
-	margin-top:20px;
-	margin-right:10px;
- /*   	background-color: aqua; */ 
 	height: 250px;
+	
+	margin-left:10px;
+	margin-right:10px;	
+	padding-top: 1rem;
 }
 
 .content_2{
+	display: flex;
+	justify-content: center;
+	
 	display: grid;
 	grid-template-columns: 500px 500px;
 	grid-row: repeat(1,300px);
@@ -76,6 +60,9 @@ body{
 }
 
 .content_3{
+	display: flex;
+	justify-content: center;
+	
 	margin-left:10px;
 	margin-top:10px;
 	margin-right:10px;
@@ -83,7 +70,7 @@ body{
 	height: 280px;
 }
 
-.nav{
+/* .nav{
 	list-style-type: none;
 	line-height: 50px;
 
@@ -94,7 +81,7 @@ body{
 }
 
 .admin{
-	/*  background-color: white;*/
+	 background-color: white;
 	float:right;
 	margin-right:20px;
 	margin-top:50px;
@@ -103,11 +90,11 @@ body{
 .admin_bar > a{
 	text-decoration: none;
 	color:rgb(44,74,58);
-}
+} */
 .content_1_1{
 	border: 1px solid  rgb(44,74,58);
 	border-radius: 2em;
-	margin-left: 40px;
+	margin-left: 10px;
 	margin-right: 10px;
 	width: 300px;
 	text-align: center;
@@ -133,7 +120,7 @@ body{
 .content_2_1{
 	border: 1px solid  rgb(44,74,58);
 	border-radius: 2em;
-	margin-left: 50px;
+	margin-left: 10px;
 	margin-right: 10px;
 	width: 480px;
 	text-align: center;
@@ -146,7 +133,7 @@ hr{
 .content_3_1{
 	border: 1px solid  rgb(44,74,58);
 	border-radius: 2em;
-	margin-left: 50px;
+	margin-left: 10px;
 	margin-right: 10px;
 	width: 980px;
 	
@@ -157,4 +144,4 @@ h2{
 a{
 	color:black;
 	text-decoration: none;
-}
+} 

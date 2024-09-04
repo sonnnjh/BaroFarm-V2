@@ -29,7 +29,7 @@ public class FishController {
 
 	@Autowired
 	IF_FishService fService;
-	
+
 	@GetMapping("/home")
 	public String home() {
 		return "home";
@@ -90,9 +90,10 @@ public class FishController {
 
 		return "mypage";
 	}
+	
 
-	//-담당자 meat-
-	@GetMapping("/memberUpdate")
+	//-담당자 meat- 관리자페이지에서 관리자 전체보기기능에서 회원정보 수정기능 구현 
+	@PostMapping("/memberUpdate") //회원정보 수정기능 
 	public String memberUpdate() {
 		
 		return "mypage";

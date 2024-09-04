@@ -22,12 +22,8 @@ font-size: 30px;
 	background-color: rgb(44,74,58);
 	border: none;
 }
-.hr_2{
-	width: 900%;
-	height:2px;
-	background-color: rgb(44,74,58);
-	border: none;
-}
+
+
 .product_cate_font{
 	color:rgba(44,74,58);
 	font-size:50px;
@@ -52,17 +48,11 @@ a:hover {
 	margin:auto;
 	padding:auto;
 }
+
 .fish_table_row{
 	display:table-row;
 	vertical-align: middle;
 	text-align: center;
-}
-.fish_table_cell{
-	display: table-cell;
-	padding: 0px 30px;
-	height: 15px;
-
-	
 }
 
 .fish_table_cell p{

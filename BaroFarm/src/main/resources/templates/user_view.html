@@ -10,8 +10,11 @@
 <body>
 	<header th:replace="~{AdminLayout::header}"></header>
 	<nav th:replace="~{AdminLayout::nav}"></nav>
+	
+	<div class="m1">
 	<font id="title"> 회원 정보 </font>
-	<hr class="hr">	<br>
+	</div>
+	<hr class="hr" noshade>
 	<hr class="hr_1">
 	<div class="fish_table">
 		<div class="fish_table_row">
@@ -50,15 +53,13 @@
 			<div class="fish_table_cell" th:text="${u.user_name}"></div>
 			<div class="fish_table_cell" th:text="${u.user_phone}"></div>
 			<div class="fish_table_cell" th:text="${u.user_gender}"></div>
-		
 			<div class="fish_table_cell">		
 			<a th:href="@{'/mod/' + ${u.user_id}}">수정</a></div>
 			<div class="fish_table_cell">
 			<a th:href="@{'/del/' + ${u.user_id}}">삭제</a></div>
-			
 		</div>
 		
-		<hr class="hr_2" align="center">
+		<hr width=700%>
 	</div>
 
 </body>

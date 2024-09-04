@@ -4,32 +4,30 @@ body{
 	margin-left:10px;
 }
 #title{
-color:rgba(44,74,58);
-font-weight: bolder;
-font-size: 30px;
-
+	font-family: Pretendard ExtraBold;
+	font-size: 2rem;
+	color: rgb(44,74,58);
+	margin-top: 2rem;
+}
+.m1{
+	display:flex;
+	justify-content: center;
 }
 .hr{
-	width: 50%;
-	height:10px;
-	background-color: rgb(44,74,58);
-	border: none;
+	width: 60%;
+	height:0.2rem;
+	background-color:rgb(44,74,58);
+	margin-top: 1rem;
+	border:none;
 }
-
 .hr_1{
-	width: 95%;
-	height:10px;
-	background-color: rgb(44,74,58);
-	border: none;
-}
-.hr_2{
-	width: 700%;
-	height:2px;
-	background-color: rgb(44,74,58);
-	border: none;
-	
+	width: 90%;
+	height:0.1rem;
+	background-color:rgb(44,74,58);
+	margin-top: 1rem;
+	border:none;
+} 
 
-}
 .product_cate_font{
 	color:rgba(44,74,58);
 	font-size:50px;

@@ -126,28 +126,27 @@ main .fish_table{
 	margin:auto;
 	padding:auto;
 }
-main .fish_table_row{
+ main .fish_table_row{
 	display:table-row;
 	vertical-align: middle;
 	text-align: center;
-}
+}  
 main .fish_table_cell{
 	display: table-cell;
 	padding: 0px 30px;
 	height: 15px;
-}
+} 
 main .fish_table_cell2{
 	width:3%;
 	display: table-cell;
 	padding: 0px 30px;
 	height: 15px;
-}
+} 
 main .fish_table_cell2 a{
 	text-decoration:none;
 	color: rgb(44,74,58);
 	font-weight: bolder;	
 }
-
 .page {
 	display: flex;
 	justify-content: center;

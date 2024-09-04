@@ -19,12 +19,17 @@
 		<div class="member">
 			<div class="container">
 				<h4>회원 정보 수정</h4>
-				<form action="memberUpdate" method="get">
-					<label>회원정보</label> 
+				<form action="memberUpdate" method="post">
+					<label>아이디</label> 
 						<input type="text" th:value="${session.user_id}" name="user_id"> 
- 						<input type="password" placeholder="*****" name="user_pass"> 
-					<label>주소 정보</label> 
-						<input type="text"  placeholder="주소"  name="address"> 
+					<label>이름</label>						
+ 						<input type="text" th:value="${session.user_name}" name="user_name"> 
+ 						
+					<!-- LoginController layer에서 session에 저장한 값이 user_id와 user_name이여서 2개만  불러와지는 거 같음 -->
+<!--  					<label>이메일</label>						
+ 						<input type="text" th:value="${session.user_email}" name="user_email"> 
+					<label>연락처</label>						
+ 						<input type="text" th:value="${session.user_phone}" name="user_phone">  --> 
 					<button type="submit" class="btn">수정</button>
 				</form>
 			</div>

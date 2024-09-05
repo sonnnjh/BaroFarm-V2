@@ -163,16 +163,18 @@ main .fish_table_cell2 a{
 /* 	margin-top: 1rem;*/
 }
 
-main .form{
+main .forBtn{
 	position:relative; 
-	left:-43%;
 }
-
+#deleteBtn{
+	position:absolute;
+	margin-left: 5%;
+}
 #addBtn {
 	position:absolute;
-	left:53%;
+	left:10%;
 }
 .excel{
 	position:absolute;
-	left:58.2%;
+	left:15%;
 }

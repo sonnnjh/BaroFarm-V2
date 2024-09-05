@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout.css}">
+<link th:href="@{/css/user_view.css}" rel="stylesheet" type="text/css" />
+
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	
+	<div class="m1">
+		<font id="title">공지사항</font>
+	</div>
+	
+	<hr class="hr" noshade>
+	<hr class="hr_1">
+	<div class="fish_table">
+		<div class="fish_table_row">
+			
+			<div class="fish_table_cell">
+				<p>번호</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>제목</p>
+			</div>
+			<div class="fish_table_cell">
+				<p>날짜</p>
+			</div>			
+		</div>
+	</div>	
+	<hr class="hr_1">
+		<div class="fish_table" th:each="u:${user}">
+		
+		<div class="fish_table_row">
+			<div class="fish_table_cell" th:text="${u.user_id}"></div>
+			<div class="fish_table_cell" th:text="${u.user_email}"></div>
+			<div class="fish_table_cell" th:text="${u.user_name}"></div>
+			<div class="fish_table_cell"><a th:href="@{'/mod/' + ${u.user_id}}">수정</a></div>
+			<div class="fish_table_cell"><a th:href="@{'/del/' + ${u.user_id}}">삭제</a></div>
+		</div>
+		
+		<hr width=700%>
+	</div>
+</body>
+</html>

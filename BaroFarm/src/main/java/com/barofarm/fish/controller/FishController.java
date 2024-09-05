@@ -51,12 +51,7 @@ public class FishController {
 	if(pagevo.getPage()==null) {
 		pagevo.setPage(1);
 	}
-	System.out.println("현재 페이지 번호: "+pagevo.getPage());
-	
 	pagevo.setTotalCount(fService.getTotalCount());
-	pagevo.prt();
-//	System.out.println("시작페이지 번호: "+pagevo.getStartNo());
-//	System.out.println("끝페이지 번호: "+pagevo.getEndNo());
 	List<FishVo> fVo = fService.allview(pagevo);
 	model.addAttribute("pagevo",pagevo);
 	model.addAttribute("allList",fVo);
@@ -111,10 +106,10 @@ public class FishController {
 		return "basket";
 	}
 
-	@GetMapping("/notice")
-	public String notice() {
-
-		return "notice";
+	@GetMapping("/info")
+	public String info(Model model) {
+		
+		return "info";
 	}
 
 	// 담당자 son

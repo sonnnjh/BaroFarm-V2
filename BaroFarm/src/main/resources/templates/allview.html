@@ -55,6 +55,7 @@
 			</div>
 		</div>
 		<hr class="hr_1">
+		<div class="forBtn">
 			<form action="/checkProduct" method="post">	
 			
 				<div class="fish_table" th:each="p:${allList}">
@@ -75,14 +76,12 @@
 					</div>
 					<hr style="width:90vw;">
 				</div>
-				
-				<div class="form"><!-- 세 버튼을div로 묶어 부모를 만들음>position설정을 위해..  -->
 				<input type="submit" value="상품 삭제" id="deleteBtn" onclick="return delchk()">
 			</form>
 			
 			<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>
 			<form action="excelDown" class="excel"><input type="submit" value="상품 엑셀 다운로드" ></form>		
-				</div><!--form끝  --> 
+		</div>
 	<!-- 페이징 완료  담당자:meat-->
 	</main>
 	

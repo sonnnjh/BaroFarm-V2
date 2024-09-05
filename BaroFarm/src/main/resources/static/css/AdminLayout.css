@@ -151,7 +151,6 @@ main .fish_table_cell2{
 main .fish_table_cell2 a{
 	text-decoration:none;
 	color: rgb(44,74,58);
-	font-weight: bolder;	
 }
 
 .page {
@@ -160,12 +159,14 @@ main .fish_table_cell2 a{
 	text-decoration: none;
 	color: black;
 	margin-right: 1rem;
-	margin-top: 1rem;
-}
+/* 	margin-top: 1rem;
+ */}
 #deleteBtn {
-	margin-left: 7%;
+	margin-left: 6%;
+}
+#addBtn {
+	/* margin-left: 72%; */
 }
 .excel{
-	display:inline;
-	margin-left: 83%;
-}
+	display: flex;
+	}

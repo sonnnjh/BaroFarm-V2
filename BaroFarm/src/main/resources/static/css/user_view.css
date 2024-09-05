@@ -1,7 +1,6 @@
 @charset "UTF-8";
 body{
 	text-align: center;
-	margin-left:10px;
 }
 #title{
 	font-family: Pretendard ExtraBold;
@@ -40,7 +39,6 @@ body{
 a{
 	text-decoration-line:none; 
 	color: rgba(44,74,58);
-	font-weight: bold;
 }
 a:hover {
 	/*color:red;*/
@@ -64,7 +62,6 @@ a:hover {
 
 	
 }
-
 .fish_table_cell p{
 	font-weight: bolder;	
 }

@@ -19,10 +19,6 @@
 		</div>
 		<hr class="hr" noshade>
 		
-		<form action="excelDown" class="excel" magin>
-			<input type="submit" value="상품 엑셀 다운로드" >
-		</form>		
-		<a th:href="@{add}"><button>상품 등록</button></a>	
 		
 		
 		<hr class="hr_1">
@@ -79,7 +75,11 @@
 					</div>
 					<hr style="width:90vw;">
 				</div>
-				<input type="submit" value="삭제" id="deleteBtn" onclick="return delchk()">
+				<input type="submit" value="선택 삭제" id="deleteBtn" onclick="return delchk()">
+				<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>	
+				<form action="excelDown" class="excel" >
+					<input type="submit" value="상품 엑셀 다운로드" >
+				</form>		
 			</form>
 		<!-- 페이징 완료  담당자:meat-->
 	</main>

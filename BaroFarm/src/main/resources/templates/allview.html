@@ -56,41 +56,41 @@
 			</div>
 		</div>
 		<hr class="hr_1">
-		<form action="/checkProduct" method="post">
+		<div class="forBtn">
+			<form action="/checkProduct" method="post">
 
-			<div class="fish_table" th:each="p:${allList}">
-				<div class="fish_table_row">
+				<div class="fish_table" th:each="p:${allList}">
+					<div class="fish_table_row">
 
-					<div class="fish_table_cell2">
-						<input type="checkbox" name="checkList" th:value="${p.product_no}">
-						<!-- 체크박스 추 -->
+						<div class="fish_table_cell2">
+							<input type="checkbox" name="checkList"
+								th:value="${p.product_no}">
+							<!-- 체크박스 추 -->
+						</div>
+
+						<div class="fish_table_cell2" th:text="${p.product_no}"></div>
+						<div class="fish_table_cell" th:text="${p.product_cate}"></div>
+						<div class="fish_table_cell" th:text="${p.product_middle}"></div>
+						<div class="fish_table_cell" th:text="${p.product_name}"></div>
+						<div class="fish_table_cell"
+							th:text="${#numbers.formatInteger(p.product_price,3,'COMMA')} +원 "></div>
+						<div class="fish_table_cell" th:text="${p.product_origin}"></div>
+						<div class="fish_table_cell" th:text="${p.product_stock} +개 "></div>
+						<div class="fish_table_cell2">
+							<a th:href="@{'/modify/' + ${p.product_no}}">수정</a>
+						</div>
 					</div>
-
-					<div class="fish_table_cell2" th:text="${p.product_no}"></div>
-					<div class="fish_table_cell" th:text="${p.product_cate}"></div>
-					<div class="fish_table_cell" th:text="${p.product_middle}"></div>
-					<div class="fish_table_cell" th:text="${p.product_name}"></div>
-					<div class="fish_table_cell" th:text="${#numbers.formatInteger(p.product_price,3,'COMMA')} +원 "></div>
-					<div class="fish_table_cell" th:text="${p.product_origin}"></div>
-					<div class="fish_table_cell" th:text="${p.product_stock} +개 "></div>
-					<div class="fish_table_cell2">
-					<a th:href="@{'/modify/' + ${p.product_no}}">수정</a>
-					</div>
+					<hr style="width: 90vw;">
 				</div>
-				<hr style="width: 90vw;">
-			</div>
-			<div class="form">
-				<!-- 세 버튼을div로 묶어 부모를 만들음>position설정을 위해..  -->
 				<input type="submit" value="상품 삭제" id="deleteBtn"
 					onclick="return delchk()">
-		</form>
+			</form>
 
-		<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>
-		<form action="excelDown" class="excel">
-			<input type="submit" value="상품 엑셀 다운로드">
-		</form>
-			</div>
-		<!--form끝  -->
+			<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>
+			<form action="excelDown" class="excel">
+				<input type="submit" value="상품 엑셀 다운로드">
+			</form>
+		</div>
 		<!-- 페이징 완료  담당자:meat-->
 	</main>
 

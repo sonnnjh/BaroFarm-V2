@@ -6,6 +6,7 @@
 body{
 	margin: 0;
 	margin-top: 0;
+	margin-bottom: 5%;
 }
 header {
 	color: rgb(44,74,58);
@@ -159,14 +160,19 @@ main .fish_table_cell2 a{
 	text-decoration: none;
 	color: black;
 	margin-right: 1rem;
-/* 	margin-top: 1rem;
- */}
-#deleteBtn {
-	margin-left: 6%;
+/* 	margin-top: 1rem;*/
 }
+
+main .form{
+	position:relative; 
+	left:-43%;
+}
+
 #addBtn {
-	/* margin-left: 72%; */
+	position:absolute;
+	left:53%;
 }
 .excel{
-	display: flex;
-	}
+	position:absolute;
+	left:58.2%;
+}

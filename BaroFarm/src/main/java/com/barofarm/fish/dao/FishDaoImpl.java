@@ -76,4 +76,5 @@ public class FishDaoImpl implements IF_FishDao{
 		
 		return sqlsession.selectList(mapperQuery+".excelview");
 	}
+
 }

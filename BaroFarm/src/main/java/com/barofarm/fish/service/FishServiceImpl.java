@@ -15,6 +15,7 @@ public class FishServiceImpl implements IF_FishService{
 	@Autowired
 	IF_FishDao fDao;
 	
+	
 	@Override
 	public void insert(FishVo fVo) throws Exception {
 		fDao.insert(fVo);
@@ -80,4 +81,5 @@ public class FishServiceImpl implements IF_FishService{
 		return fDao.excelview();
 	}
 
+	
 }

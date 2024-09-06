@@ -40,9 +40,7 @@ a{
 	text-decoration-line:none; 
 	color: rgba(44,74,58);
 }
-a:hover {
-	/*color:red;*/
-}
+
 .fish_table{
 	table-layout:fixed;
 	display: table;
@@ -62,7 +60,5 @@ a:hover {
 
 	
 }
-.fish_table_cell p{
-	font-weight: bolder;	
-}
+
 

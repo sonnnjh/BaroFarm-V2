@@ -32,17 +32,14 @@
 		</div>
 	</div>	
 	<hr class="hr_1">
-		<div class="fish_table" th:each="u:${user}">
-		
+		<div class="fish_table" th:each="i:${infoview}">
 		<div class="fish_table_row">
-			<div class="fish_table_cell" th:text="${u.user_id}"></div>
-			<div class="fish_table_cell" th:text="${u.user_email}"></div>
-			<div class="fish_table_cell" th:text="${u.user_name}"></div>
-			<div class="fish_table_cell"><a th:href="@{'/mod/' + ${u.user_id}}">수정</a></div>
-			<div class="fish_table_cell"><a th:href="@{'/del/' + ${u.user_id}}">삭제</a></div>
+			<div class="fish_table_cell" th:text="${i.infoNo}"></div>
+			<div class="fish_table_cell" th:text="${i.infoTitle}"></div>
+			<div class="fish_table_cell" th:text="${i.today}"></div>
 		</div>
 		
-		<hr width=700%>
+		<hr width=300%>
 	</div>
 </body>
 </html>

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.barofarm.fish.service.IF_FishService;
 import com.barofarm.fish.vo.FishVo;
 import com.barofarm.fish.vo.PageVO;
+import com.barofarm.fish.vo.infoVo;
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -106,10 +107,12 @@ public class FishController {
 		return "basket";
 	}
 
-	@GetMapping("/info")
-	public String info(Model model) {
+	@GetMapping("info")
+	public String info(Model model) throws Exception {
+		List<infoVo> infoview = fService.info();
+		model.addAttribute("infoview", infoview);
 		
-		return "info";
+		return "infoview";
 	}
 
 	// 담당자 son

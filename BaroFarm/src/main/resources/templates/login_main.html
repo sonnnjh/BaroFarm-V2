@@ -14,16 +14,24 @@
 	<div class ="login">
 	<form action="login" method="post">
     
-    <input type="text" placeholder="아이디" name="user_id" autofocus ><br>
-    <input type="password" required placeholder="비밀번호" name="user_pass"><br>
+    <input id='user_id' type="text" placeholder="아이디" name="user_id" autofocus ><br>
+    <input id='user_pw' type="password" required placeholder="비밀번호" name="user_pass"><br>
     <br>
  
     <button onclick="location.href='user_join'">회원 가입 </button>  
     <!-- 회원가입 활성화 완료  -->
-    <button type="submit" value="로그인" >로그인</button>
+    <button type="submit" value="로그인" id='login-bt'>로그인</button>
   	<!--  autofocus 기능으로 마우스커서가 바로 나올수 있게, required로 필수입력항목으로 설정  -->
 	</form>
 	</div>
+	<script type="text/javascript">
 	
+		document.getElementById('login-bt').addEventListener('click', function(){
+			var userid = document.getElementById('user_id').value;
+			if(userid === "") {
+				window.alert("Id와 Password를 입력하세요");
+			}
+		})
+	</script>
 </body>
-</html>
+</html> 

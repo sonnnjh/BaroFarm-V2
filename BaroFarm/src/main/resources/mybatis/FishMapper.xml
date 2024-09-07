@@ -23,6 +23,11 @@
 		only -->	
 		SELECT * FROM product ORDER BY product_no ASC LIMIT #{perPageNum} OFFSET #{startNo}
 	</select>
+	
+	<select id="selectinfo" resultType="com.barofarm.fish.vo.infoVo">
+		select infoNo, infoTitle, today from info
+	</select>
+	
 	<select id="excelview" resultType="com.barofarm.fish.vo.FishVo">
 	
 	select * from product order by product_no ASC

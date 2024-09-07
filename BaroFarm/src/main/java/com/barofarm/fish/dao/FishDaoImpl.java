@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.barofarm.fish.vo.FishVo;
 import com.barofarm.fish.vo.PageVO;
+import com.barofarm.fish.vo.infoVo;
 
 @Repository
 @Primary
@@ -75,6 +76,12 @@ public class FishDaoImpl implements IF_FishDao{
 	public List<FishVo> excelview() throws Exception {
 		
 		return sqlsession.selectList(mapperQuery+".excelview");
+	}
+
+	@Override
+	public List<infoVo> info() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectList(mapperQuery+".selectinfo");
 	}
 
 }

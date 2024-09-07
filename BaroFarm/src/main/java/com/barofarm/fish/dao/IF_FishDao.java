@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.barofarm.fish.vo.FishVo;
 import com.barofarm.fish.vo.PageVO;
+import com.barofarm.fish.vo.infoVo;
 
 @Mapper
 public interface IF_FishDao {
@@ -15,6 +16,7 @@ public interface IF_FishDao {
 	public void delete(int no) throws Exception;
 	public FishVo modify(int no) throws Exception;
 	public void update(FishVo fVo) throws Exception;
+	public List<infoVo> info() throws Exception;
 	
 	public List<FishVo> view(String category);//대분류
 	public List<FishVo> middleview(String middlecategory);//중분류

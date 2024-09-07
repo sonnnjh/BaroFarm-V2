@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.barofarm.fish.dao.IF_FishDao;
 import com.barofarm.fish.vo.FishVo;
 import com.barofarm.fish.vo.PageVO;
+import com.barofarm.fish.vo.infoVo;
 
 @Service
 public class FishServiceImpl implements IF_FishService{
@@ -79,6 +80,12 @@ public class FishServiceImpl implements IF_FishService{
 	public List<FishVo> excelview() throws Exception {
 		// TODO Auto-generated method stub
 		return fDao.excelview();
+	}
+
+	@Override
+	public List<infoVo> info() throws Exception {
+		// TODO Auto-generated method stub
+		return fDao.info();
 	}
 
 	

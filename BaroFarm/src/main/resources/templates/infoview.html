@@ -2,46 +2,66 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
+<title>상품 조회</title>
 </head>
+<!-- css -->
+<!-- 레이아웃 적용 개발자:son -->
 <link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout.css}">
-<!-- <link th:href="@{css/user_view.css}" rel="stylesheet" type="text/css" />
- -->
+
 <body>
 	<header th:replace="~{AdminLayout::header}"></header>
 	<nav th:replace="~{AdminLayout::nav}"></nav>
+
 	<main>
-	
+
 		<div class="m1">
 			<font class="title">공지사항</font>
 		</div>
-		
 		<hr class="hr" noshade>
+
 		<hr class="hr_1">
+
 		<div class="fish_table">
 			<div class="fish_table_row">
-				
-				<div class="fish_table_cell">
+				<div class="fish_table_cell2">
+					<input type="checkbox" th:value="${infoNo}" name="checkList" onclick="selectAll(this)">
+				</div>
+				<div class="fish_table_cell2">
 					<p>번호</p>
 				</div>
 				<div class="fish_table_cell">
 					<p>제목</p>
 				</div>
 				<div class="fish_table_cell">
-					<p>날짜</p>
-				</div>			
+					<p>내용</p>
+				</div>
 			</div>
-		</div>	
-		<hr class="hr_1">
-			<div class="fish_table" th:each="i:${infoview}">
-			<div class="fish_table_row">
-				<div class="fish_table_cell" th:text="${i.infoNo}"></div>
-				<div class="fish_table_cell" th:text="${i.infoTitle}"></div>
-				<div class="fish_table_cell" th:text="${i.today}"></div>
-			</div>
-			
-			<hr width=300%>
 		</div>
+		<hr class="hr_1">
+		<div class="forBtn">
+			<form action="/checkProduct" method="post">
+				<div class="fish_table" th:each="i:${infoview}">
+					<div class="fish_table_row">
+
+						<div class="fish_table_cell2">
+							<input type="checkbox" name="checkList" th:value="${i.infoNo}">
+							<!-- 체크박스 추 -->
+						</div>
+
+						<div class="fish_table_cell2" th:text="${i.infoNo}"></div>
+						<div class="fish_table_cell" th:text="${i.infoTitle}"></div>
+						<div class="fish_table_cell" th:text="${i.today}"></div>
+					</div>
+					<hr style="width: 90vw;">
+				</div>
+				<input type="submit" value="삭제" id="deleteBtn" onclick="return delchk()">
+			</form>
+
+			<a th:href="@{add}"><button id="addBtn">등록</button></a>
+		</div>
+		<!-- 페이징 완료  담당자:meat-->
 	</main>
+	<script th:src="@{/js/product/add.js}" type="text/javascript" defer></script>
 </body>
+
 </html>

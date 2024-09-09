@@ -8,24 +8,24 @@ body{
 	color: rgb(44,74,58);
 	margin-top: 2rem;
 }
-.m1{
+/* .m1{
 	display:flex;
 	justify-content: center;
-}
-.hr{
+} */
+/* .hr{
 	width: 60%;
 	height:0.2rem;
 	background-color:rgb(44,74,58);
 	margin-top: 1rem;
 	border:none;
-}
-.hr_1{
+} */
+/* .hr_1{
 	width: 90%;
 	height:0.1rem;
 	background-color:rgb(44,74,58);
 	margin-top: 1rem;
 	border:none;
-} 
+}  */
 
 .product_cate_font{
 	color:rgba(44,74,58);
@@ -36,12 +36,12 @@ body{
 	color:rgba(44,74,58);
 }
 
-a{
+/* a{
 	text-decoration-line:none; 
 	color: rgba(44,74,58);
-}
+} */
 
-.fish_table{
+/* .fish_table{
 	table-layout:fixed;
 	display: table;
 	width: 90%;
@@ -59,6 +59,6 @@ a{
 	height: 15px;
 
 	
-}
+} */
 
 

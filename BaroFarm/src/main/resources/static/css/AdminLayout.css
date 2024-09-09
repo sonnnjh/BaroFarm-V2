@@ -178,3 +178,11 @@ main .forBtn{
 	position:absolute;
 	left:15%;
 }
+.product_cate_font{
+	color:rgba(44,74,58);
+	font-size:50px;
+}
+
+.product_middle{
+	color:rgba(44,74,58);
+}

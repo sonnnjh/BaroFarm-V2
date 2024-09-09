@@ -25,7 +25,7 @@
 	</select>
 	
 	<select id="selectinfo" resultType="com.barofarm.fish.vo.infoVo">
-		select infoNo, infoTitle, today from info
+		 select infoNo, infoTitle, today from info
 	</select>
 	
 	<select id="excelview" resultType="com.barofarm.fish.vo.FishVo">

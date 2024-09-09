@@ -85,6 +85,7 @@ public class FishServiceImpl implements IF_FishService{
 	@Override
 	public List<infoVo> info() throws Exception {
 		// TODO Auto-generated method stub
+
 		return fDao.info();
 	}
 

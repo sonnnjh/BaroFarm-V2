@@ -24,8 +24,7 @@
 		<div class="fish_table">
 			<div class="fish_table_row">
 				<div class="fish_table_cell2">
-					<input type="checkbox" th:value="${product_no}" name="checkList"
-						onclick="selectAll(this)">
+					<input type="checkbox" th:value="${product_no}" name="checkList" onclick="selectAll(this)">
 				</div>
 				<div class="fish_table_cell2">
 					<p>번호</p>
@@ -61,8 +60,7 @@
 					<div class="fish_table_row">
 
 						<div class="fish_table_cell2">
-							<input type="checkbox" name="checkList"
-								th:value="${p.product_no}">
+							<input type="checkbox" name="checkList"	th:value="${p.product_no}">
 							<!-- 체크박스 추 -->
 						</div>
 
@@ -80,8 +78,7 @@
 					</div>
 					<hr style="width: 90vw;">
 				</div>
-				<input type="submit" value="상품 삭제" id="deleteBtn"
-					onclick="return delchk()">
+				<input type="submit" value="상품 삭제" id="deleteBtn" onclick="return delchk()">
 			</form>
 
 			<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>

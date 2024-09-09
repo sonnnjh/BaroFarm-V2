@@ -111,7 +111,6 @@ public class FishController {
 	public String info(Model model) throws Exception {
 		List<infoVo> infoview = fService.info();
 		model.addAttribute("infoview", infoview);
-		
 		return "infoview";
 	}
 

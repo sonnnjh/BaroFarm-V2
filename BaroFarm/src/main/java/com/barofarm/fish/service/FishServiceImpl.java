@@ -89,5 +89,16 @@ public class FishServiceImpl implements IF_FishService{
 		return fDao.info();
 	}
 
+	@Override
+	public void infoAdd(infoVo infoVo) throws Exception {
+		fDao.infoAdd(infoVo);
+		
+	}
+
+	@Override
+	public infoVo infoDetail(String infoNum) throws Exception {
+		return fDao.infoDetail(infoNum);
+	}
+
 	
 }

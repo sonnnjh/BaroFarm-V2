@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>공지사항 등록</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/AdminLayout.css}">
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	<main>
+		<div class="m1">
+			<font class="title"> 공지사항 등록 </font>
+		</div>
+		<hr class="hr" noshade>
+		<div class="form">
+			<div class="m2" >
+				<div>제목</div>
+				<div>내용</div>
+			</div>
+			<div class="m3">
+				<form action="infoAddSave" method="post">
+					<div><input type ="text" name="infoTitle" autocomplete="off" autofocus="autofocus" maxlength="20" id="infoTitle"></div>
+					<div><textarea name="infoText" cols="20" rows="10" id="infoText"></textarea></div>
+					<div><input type ="submit" value="상품등록"></div>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

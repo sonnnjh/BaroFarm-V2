@@ -22,5 +22,7 @@ public interface IF_FishService {
 	public int getTotalCount() throws Exception;
 	public void chkDelete(List<Integer> chkDelete);
 	public List<FishVo> excelview() throws Exception;
+	public void infoAdd(infoVo infoVo)throws Exception;//공지사항 저장 
+	public infoVo infoDetail(String infoNum)throws Exception; //공지사항 자세히 보기 
 	
 }

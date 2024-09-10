@@ -73,5 +73,11 @@
        		 #{productNo}
    		 </foreach>
 	</delete>
+	<insert id="infoInsert" parameterType="com.barofarm.fish.vo.infoVo">
+		INSERT into info values (null, #{infoTitle}, #{infoText}, now() )
 
+	</insert>
+	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">
+		 select * from info where infoNo=#{infoNo}
+	</select>
 </mapper>

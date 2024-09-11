@@ -21,7 +21,7 @@
 		product_no asc
 		offset #{startNo} rows fetch next #{perPageNum} rows
 		only -->	
-		SELECT * FROM product ORDER BY product_no ASC LIMIT #{perPageNum} OFFSET #{startNo}
+		SELECT * FROM product ORDER BY product_no DESC LIMIT #{perPageNum} OFFSET #{startNo}
 	</select>
 	
 	<select id="selectinfo" resultType="com.barofarm.fish.vo.infoVo">
@@ -73,6 +73,14 @@
        		 #{productNo}
    		 </foreach>
 	</delete>
+	
+	<delete id="chkDeleteinfo" parameterType="com.barofarm.fish.vo.infoVo">
+    	delete from info where infoNo IN 
+  		  <foreach item="infoNo" index="index" collection="list" open="(" separator="," close=")">
+       		 #{infoNo}
+   		 </foreach>
+	</delete>
+	
 	<insert id="infoInsert" parameterType="com.barofarm.fish.vo.infoVo">
 		INSERT into info values (null, #{infoTitle}, #{infoText}, now() )
 
@@ -80,4 +88,5 @@
 	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">
 		 select * from info where infoNo=#{infoNo}
 	</select>
+	
 </mapper>

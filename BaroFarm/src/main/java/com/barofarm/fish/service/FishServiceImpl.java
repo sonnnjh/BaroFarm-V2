@@ -90,6 +90,12 @@ public class FishServiceImpl implements IF_FishService{
 	}
 
 	@Override
+
+	public void chkDeleteinfo(List<Integer> chkDelete) {
+		
+		fDao.chkDeleteinfo(chkDelete);
+	}
+	
 	public void infoAdd(infoVo infoVo) throws Exception {
 		fDao.infoAdd(infoVo);
 		

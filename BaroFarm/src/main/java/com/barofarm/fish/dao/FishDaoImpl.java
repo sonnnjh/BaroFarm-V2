@@ -85,6 +85,11 @@ public class FishDaoImpl implements IF_FishDao{
 	}
 
 	@Override
+	public void chkDeleteinfo(List<Integer> chkDelete) {
+		
+		sqlsession.delete(mapperQuery+".chkDeleteinfo",chkDelete);
+	}
+
 	public void infoAdd(infoVo infoVo) throws Exception {
 		sqlsession.insert(mapperQuery+".infoInsert", infoVo);		
 	}

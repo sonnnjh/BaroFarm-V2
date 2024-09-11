@@ -91,5 +91,6 @@
 	<update id="infoMod">
 		update info set infoTitle=#{infoTitle}, infoText=#{infoText} where infoNo=#{infoNo}
 	</update>
+
 	
 </mapper>

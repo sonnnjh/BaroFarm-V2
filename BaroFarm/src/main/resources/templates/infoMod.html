@@ -2,8 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" >
 <head>
 <meta charset="UTF-8">
-<title>공지사항 상세보기</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>공지사항 수정하기</title>
 </head>
 <link rel="stylesheet" type="text/css" th:href="@{/css/AdminLayout.css}">
 <body>
@@ -11,7 +10,7 @@
 	<nav th:replace="~{AdminLayout::nav}"></nav>
 	<main>
 		<div class="m1">
-			<font class="title"> 공지사항 상세보기 </font>
+			<font class="title"> 공지사항 수정 </font>
 		</div>
 		<hr class="hr" noshade>
 		<div class="form">
@@ -20,14 +19,13 @@
 				<div>내용</div>
 			</div>
 			<div class="m3">
-				<form >
-					<div><span th:text="${infoVo.infoTitle}"></span></div>
-					<div><span th:text="${infoVo.infoText}"></span></div>
-					<div><input type ="button" th:value="수정하기" th:onclick="|location.href='@{/infoMod/${infoVo.infoNo}}'|"></div>
+				<form action="#" method="post">
+					<!-- <div><input type="text" name="infoTitle" th:value="${infNo.infoTitle}" ></div>
+					<div><input type="text" name="infoText" th:value="${infoVo.infoText}"></div> -->
+					<div><input type ="submit" value="저장하기"></div>
 				</form>
 			</div>
 		</div>
 	</main>
-
 </body>
 </html>

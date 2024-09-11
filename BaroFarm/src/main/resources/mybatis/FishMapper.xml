@@ -25,7 +25,7 @@
 	</select>
 	
 	<select id="selectinfo" resultType="com.barofarm.fish.vo.infoVo">
-		 select infoNo, infoTitle, today from info
+		 select * from info
 	</select>
 	
 	<select id="excelview" resultType="com.barofarm.fish.vo.FishVo">
@@ -88,5 +88,9 @@
 	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">
 		 select * from info where infoNo=#{infoNo}
 	</select>
+	<update id="infoMod">
+		update info set infoTitle=#{infoTitle}, infoText=#{infoText} where infoNo=#{infoNo}
+	</update>
+
 	
 </mapper>

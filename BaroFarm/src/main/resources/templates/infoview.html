@@ -32,6 +32,9 @@
 					<p>제목</p>
 				</div>
 				<div class="fish_table_cell">
+					<p>내용</p>
+				</div> 
+				<div class="fish_table_cell">
 					<p>날짜</p>
 				</div>
 				<div class="fish_table_cell">
@@ -52,9 +55,8 @@
 
 						<div class="fish_table_cell2" th:text="${i.infoNo}"></div>
 						<a th:href="@{'/infoDetail/' + ${i.infoNo}}"><div class="fish_table_cell" th:text="${i.infoTitle}"></div></a>
+						<div class="fish_table_cell" th:text="${#strings.abbreviate(i.infoText, 15)}"></div> <!-- 15자 이상은 ...으로 보여주는 타임리프문법  -->
 						<div class="fish_table_cell" th:text="${i.today}"></div>
-						<div class="fish_table_cell"><a th:href="@{#}">수정</a></div>
-						
 					</div>
 					<hr style="width: 90vw;">
 				</div>

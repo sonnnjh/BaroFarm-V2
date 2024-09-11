@@ -26,5 +26,6 @@ public interface IF_FishService {
 	public List<FishVo> excelview() throws Exception;
 	public void infoAdd(infoVo infoVo)throws Exception;//공지사항 저장 
 	public infoVo infoDetail(String infoNum)throws Exception; //공지사항 자세히 보기 
+	public infoVo infoMod(String infoNum)throws Exception;//공지사항 수정 
 	
 }

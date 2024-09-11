@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>공지사항 수정하기</title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/AdminLayout.css}">
+<body>
+	<header th:replace="~{AdminLayout::header}"></header>
+	<nav th:replace="~{AdminLayout::nav}"></nav>
+	<main>
+		<div class="m1">
+			<font class="title"> 공지사항 수정 </font>
+		</div>
+		<hr class="hr" noshade>
+		<div class="form">
+			<div class="m2" >
+				<div>제목</div>
+				<div>내용</div>
+			</div>
+			<div class="m3">
+				<form action="/infoModSave" method="post">
+					<div><input type="text" name="infoTitle" th:value="${infoVo.infoTitle}" ></div>
+					<div><input type="text" name="infoText" th:value="${infoVo.infoText}"></div>
+					<div><input type ="submit" value="수정하기"></div>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

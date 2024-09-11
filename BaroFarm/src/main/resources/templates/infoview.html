@@ -53,7 +53,7 @@
 						<div class="fish_table_cell2" th:text="${i.infoNo}"></div>
 						<a th:href="@{'/infoDetail/' + ${i.infoNo}}"><div class="fish_table_cell" th:text="${i.infoTitle}"></div></a>
 						<div class="fish_table_cell" th:text="${i.today}"></div>
-						<div class="fish_table_cell"><a th:href="@{#}">수정</a></div>
+						<div class="fish_table_cell"><a th:href="@{/infoMod/{i.infoNo}}">수정</a></div>
 						
 					</div>
 					<hr style="width: 90vw;">

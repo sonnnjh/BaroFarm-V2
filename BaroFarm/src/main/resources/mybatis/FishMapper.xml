@@ -80,4 +80,7 @@
 	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">
 		 select * from info where infoNo=#{infoNo}
 	</select>
+	<update id="infoMod">
+		update info set infoTitle=#{infoTitle}, infoText=#{infoText} where infoNo=#{infoNo}
+	</update>
 </mapper>

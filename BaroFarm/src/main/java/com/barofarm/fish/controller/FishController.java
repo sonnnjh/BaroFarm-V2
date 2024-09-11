@@ -171,6 +171,12 @@ public class FishController {
 		model.addAttribute("infoVo", infoVo);
 		return "infoDetail";
 	}
+	@GetMapping("/infoMod/{infoNo}")
+	public String infoMod(Model model, @PathVariable("infoNo") String infoNum) throws Exception{
+		infoVo infoVo = fService.infoMod(infoNum);
+		model.addAttribute("infoVo", infoVo);
+		return "infoMod";
+	}
 	
 	// 엑셀 다운로드 -담당자:fish-
 	@GetMapping("excelDown")

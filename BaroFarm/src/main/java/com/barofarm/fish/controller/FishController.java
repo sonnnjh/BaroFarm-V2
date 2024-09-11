@@ -54,7 +54,7 @@ public class FishController {
 	}
 	pagevo.setTotalCount(fService.getTotalCount());
 	List<FishVo> fVo = fService.allview(pagevo);
-	pagevo.prt();
+//	pagevo.prt();
 	model.addAttribute("pagevo",pagevo);
 	model.addAttribute("allList",fVo);
 	return "allview";

@@ -9,7 +9,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,6 +54,7 @@ public class FishController {
 	}
 	pagevo.setTotalCount(fService.getTotalCount());
 	List<FishVo> fVo = fService.allview(pagevo);
+	pagevo.prt();
 	model.addAttribute("pagevo",pagevo);
 	model.addAttribute("allList",fVo);
 	return "allview";
@@ -148,7 +148,7 @@ public class FishController {
 	
 	//선택삭제 
 	@PostMapping("checkProduct")
-	public String chkDelete(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
+	public String chkDelete(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {		
 		fService.chkDelete(chkDelete);
 		return "redirect:/allview";
 	}
@@ -178,112 +178,119 @@ public class FishController {
 		return "infoMod";
 	}
 	
-	// 엑셀 다운로드 -담당자:fish-
-	@GetMapping("excelDown")
-	public void excelDown(HttpServletResponse response) throws Exception{
-		// 게시판 목록을 List 객체에 저장
-		List<FishVo> pList = fService.excelview();
-		// .xlsx 확장자 -> 엑셀 2007 이후 엑셀 
-		Workbook wb = new XSSFWorkbook();
-		Sheet sheet = wb.createSheet("상품 리스트");
-		// 엑셀 시트이름 설정 
-		// import org.apache.poi.ss.usermodel.Sheet;
-		Row row = null;
-		// ㅡ 행 값
-		Cell cell = null;
-		// 셀 값 
-		int rowNo = 0;
+	@PostMapping("checkinfo")
+	public String chkDeleteinfo(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
+		fService.chkDeleteinfo(chkDelete);
 		
-		CellStyle headStyle = wb.createCellStyle();
-		headStyle.setAlignment(HorizontalAlignment.CENTER);
-		// 셀 안의 데이터 값을 가운데 정렬 
-		
-		// 헤더 생성
-		row = sheet.createRow(rowNo++);
-		cell = row.createCell(0);
-		// 셀 시작이 0번 부터 시작 
-		cell.setCellStyle(headStyle);
-		// 셀 값의 가운데 정렬 값 적용 
-		cell.setCellValue("번호");
-		
-		cell = row.createCell(1);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("대분류");
-		
-		cell = row.createCell(2);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("중분류");
-		
-		cell = row.createCell(3);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("상품명");
-		
-		cell = row.createCell(4);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("상품가격");
-		
-		cell = row.createCell(5);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("원산지");
-		
-		cell = row.createCell(6);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("재고");
-		
-		///// head 영역 생성완료 /// 
-		
-		// 헤드 밑에 들어갈 데이터를 확장 For문으로 뽑아 오기 
-		for(FishVo pVo:pList) {
-			row = sheet.createRow(rowNo++);
-			// 행 만들기 ㅡ> 순차적으로 행 번호는 증가
-			
-			cell=row.createCell(0);
-			// 셀 만들기 행의 0번 부터 시작 
-			cell.setCellStyle(headStyle);
-			// 셀 데이터 값 가운데 정렬
-			cell.setCellValue(pVo.getProduct_no());
-			// 셀 데이터 값을 가져온다 
-			
-			cell=row.createCell(1);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_cate());
-			// 대룬류 값을 가져온다
-			
-			cell=row.createCell(2);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_middle());
-			// 중분류 값을 가져온다.
-			
-			cell=row.createCell(3);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_name());
-			// 상품명 데이터 값을 가져온다.
-			
-			cell=row.createCell(4);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_price());
-			// 상품가격 데이터 값을 가져온다.
-			
-			cell=row.createCell(5);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_origin());
-			// 원산지 데이터 값을 가져온다
-			
-			cell=row.createCell(6);
-			cell.setCellStyle(headStyle);
-			cell.setCellValue(pVo.getProduct_stock());
-			// 재고 데이터 값을 가져온다.
-		}
-		
-		// 컨텐츠 타입과 파일명 지정 
-		response.setContentType("ms-vnd/excel");
-		response.setHeader("Content-Disposition", "attachment;filename=product_list.xlsx");
-		
-		//엑셀 출력
-		wb.write(response.getOutputStream());
-		wb.close();
-		
+		return "redirect:/info"; 
 	}
+	
+	// 엑셀 다운로드 
+			@GetMapping("excelDown")
+			public void excelDown(HttpServletResponse response) throws Exception{
+				// 게시판 목록을 List 객체에 저장
+				List<FishVo> pList = fService.excelview();
+				// .xlsx 확장자 -> 엑셀 2007 이후 엑셀 
+				Workbook wb = new XSSFWorkbook();
+				Sheet sheet = wb.createSheet("상품 리스트");
+				// 엑셀 시트이름 설정 
+				// import org.apache.poi.ss.usermodel.Sheet;
+				Row row = null;
+				// ㅡ 행 값
+				Cell cell = null;
+				// 셀 값 
+				int rowNo = 0;
+				
+				CellStyle headStyle = wb.createCellStyle();
+				headStyle.setAlignment(HorizontalAlignment.CENTER);
+				// 셀 안의 데이터 값을 가운데 정렬 
+				
+				// 헤더 생성
+				row = sheet.createRow(rowNo++);
+				cell = row.createCell(0);
+				// 셀 시작이 0번 부터 시작 
+				cell.setCellStyle(headStyle);
+				// 셀 값의 가운데 정렬 값 적용 
+				cell.setCellValue("번호");
+				
+				cell = row.createCell(1);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("대분류");
+				
+				cell = row.createCell(2);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("중분류");
+				
+				cell = row.createCell(3);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("상품명");
+				
+				cell = row.createCell(4);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("상품가격");
+				
+				cell = row.createCell(5);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("원산지");
+				
+				cell = row.createCell(6);
+				cell.setCellStyle(headStyle);
+				cell.setCellValue("재고");
+				
+				///// head 영역 생성완료 /// 
+				
+				// 헤드 밑에 들어갈 데이터를 확장 For문으로 뽑아 오기 
+				for(FishVo pVo:pList) {
+					row = sheet.createRow(rowNo++);
+					// 행 만들기 ㅡ> 순차적으로 행 번호는 증가
+					
+					cell=row.createCell(0);
+					// 셀 만들기 행의 0번 부터 시작 
+					cell.setCellStyle(headStyle);
+					// 셀 데이터 값 가운데 정렬
+					cell.setCellValue(pVo.getProduct_no());
+					// 셀 데이터 값을 가져온다 
+					
+					cell=row.createCell(1);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_cate());
+					// 대룬류 값을 가져온다
+					
+					cell=row.createCell(2);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_middle());
+					// 중분류 값을 가져온다.
+					
+					cell=row.createCell(3);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_name());
+					// 상품명 데이터 값을 가져온다.
+					
+					cell=row.createCell(4);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_price());
+					// 상품가격 데이터 값을 가져온다.
+					
+					cell=row.createCell(5);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_origin());
+					// 원산지 데이터 값을 가져온다
+					
+					cell=row.createCell(6);
+					cell.setCellStyle(headStyle);
+					cell.setCellValue(pVo.getProduct_stock());
+					// 재고 데이터 값을 가져온다.
+				}
+				
+				// 컨텐츠 타입과 파일명 지정 
+				response.setContentType("ms-vnd/excel");
+				response.setHeader("Content-Disposition", "attachment;filename=product_list.xlsx");
+				
+				//엑셀 출력
+				wb.write(response.getOutputStream());
+				wb.close();
+				
+			}
 
 
 }

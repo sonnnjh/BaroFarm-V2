@@ -134,11 +134,12 @@ public class PageVO {
 	}
 
 	public int getStartNo() {
-
-		return startNo;
+		
+		return startNo-1;
 	}
 
 	public void setStartNo(int startNo) {
+		
 		this.startNo = startNo;
 	}
 

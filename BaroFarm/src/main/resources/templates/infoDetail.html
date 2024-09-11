@@ -20,15 +20,14 @@
 				<div>내용</div>
 			</div>
 			<div class="m3">
-				<form action="#" method="post">
-					<!-- <div><input type ="text" name="infoNo"  th:value="${infoVo.infoTitle}" ></div>
-					<div><input type="text" name="infoNo"  th:value="${infoVo.infoText}"></div> -->
+				<form >
 					<div><span th:text="${infoVo.infoTitle}"></span></div>
 					<div><span th:text="${infoVo.infoText}"></span></div>
+					<div><input type ="button" th:value="수정하기" th:onclick="|location.href='@{/infoMod/${infoVo.infoNo}}'|"></div>
 				</form>
-				<div><a th:href="@{/infoMod/{infoVo.infoNo}}"><input type ="button" value="수정하기"></a></div>
 			</div>
 		</div>
 	</main>
+
 </body>
 </html>

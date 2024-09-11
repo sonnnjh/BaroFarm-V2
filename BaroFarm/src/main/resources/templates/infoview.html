@@ -2,10 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>공지사항 조회</title>
 </head>
 <!-- css -->
-<!-- 레이아웃 적용 개발자:son -->
 <link rel="stylesheet" type="text/css" th:href="@{css/AdminLayout.css}">
 
 <body>
@@ -35,6 +34,12 @@
 				<div class="fish_table_cell">
 					<p>날짜</p>
 				</div>
+				<div class="fish_table_cell">
+					<p>시간</p>
+				</div>
+				<div class="fish_table_cell">
+					<p>수정</p>
+				</div>
 			</div>
 		</div>
 		<hr class="hr_1">
@@ -45,19 +50,21 @@
 
 						<div class="fish_table_cell2">
 							<input type="checkbox" name="checkList" th:value="${i.infoNo}">
-							<!-- 체크박스 추 -->
+							<!-- 체크박스 추가 -->
 						</div>
 
 						<div class="fish_table_cell2" th:text="${i.infoNo}"></div>
-						<div class="fish_table_cell" th:text="${i.infoTitle}"></div>
+						<a th:href="@{'/infoDetail/' + ${i.infoNo}}"><div class="fish_table_cell" th:text="${i.infoTitle}"></div></a>
 						<div class="fish_table_cell" th:text="${i.today}"></div>
+						<div class="fish_table_cell"><a th:href="@{#}">수정</a></div>
+						
 					</div>
 					<hr style="width: 90vw;">
 				</div>
 				<input type="submit" value="삭제" id="deleteBtn" onclick="return delchk()">
 			</form>
 
-			<a th:href="@{add}"><button id="addBtn">등록</button></a>
+			<a th:href="@{/infoAdd}"><button id="addBtn">등록</button></a>
 		</div>
 		<!-- 페이징 완료  담당자:meat-->
 	</main>

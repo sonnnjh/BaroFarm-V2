@@ -61,7 +61,7 @@
 
 						<div class="fish_table_cell2">
 							<input type="checkbox" name="checkList"	th:value="${p.product_no}">
-							<!-- 체크박스 추 -->
+							<!-- 체크박스 추가 -->
 						</div>
 
 						<div class="fish_table_cell2" th:text="${p.product_no}"></div>
@@ -81,7 +81,7 @@
 				<input type="submit" value="상품 삭제" id="deleteBtn" onclick="return delchk()">
 			</form>
 
-			<a th:href="@{add}"><button id="addBtn">상품 등록</button></a>
+			<a th:href="@{/add}"><button id="addBtn">상품 등록</button></a>
 			<form action="excelDown" class="excel">
 				<input type="submit" value="상품 엑셀 다운로드">
 			</form>

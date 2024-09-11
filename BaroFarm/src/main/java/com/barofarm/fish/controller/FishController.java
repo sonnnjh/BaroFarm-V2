@@ -44,7 +44,7 @@ public class FishController {
 	@PostMapping("/addSave")
 	public String addSave(@ModelAttribute FishVo fVo) throws Exception {
 		fService.insert(fVo);
-		return "redirect:/home";
+		return "redirect:/allview";
 	}
 
 	@GetMapping("/allview")
@@ -151,6 +151,25 @@ public class FishController {
 	public String chkDelete(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {		
 		fService.chkDelete(chkDelete);
 		return "redirect:/allview";
+	}
+	//공지사항 등록 
+	@GetMapping("infoAdd")
+	public String infoAdd() {
+		return "infoAdd";
+	}
+	//공지사항 저장 
+	@PostMapping("infoAddSave")
+	public String infoAddSave(@ModelAttribute infoVo infoVo) throws Exception {
+		fService.infoAdd(infoVo);
+		
+		return "redirect:/info";
+	}
+	//공지사항 자세히보기 
+	@GetMapping("/infoDetail/{infoNo}")
+	public String infoDetail(Model model, @PathVariable("infoNo") String infoNum) throws Exception {
+		infoVo infoVo = fService.infoDetail(infoNum);
+		model.addAttribute("infoVo", infoVo);
+		return "infoDetail";
 	}
 	
 	@PostMapping("checkinfo")

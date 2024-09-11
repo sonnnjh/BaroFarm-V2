@@ -84,4 +84,11 @@ public class FishDaoImpl implements IF_FishDao{
 		return sqlsession.selectList(mapperQuery+".selectinfo");
 	}
 
+	@Override
+	public void chkDeleteinfo(List<Integer> chkDelete) {
+		
+		sqlsession.delete(mapperQuery+".chkDeleteinfo",chkDelete);
+	}
+
+
 }

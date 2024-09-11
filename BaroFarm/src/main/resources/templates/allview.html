@@ -92,10 +92,8 @@
 	<div class="page">
 		<tr>
 			<td colspan=4 align=center>
-				<div
-					th:each="idx : ${#numbers.sequence(pagevo.startPage, pagevo.endPage)}">
-					<a class="page" th:href="@{'/allview?page=' + ${idx}}"> <span
-						th:if="${idx == pagevo.page }">[</span> <span th:text="${idx}">idx</span>
+				<div th:each="idx : ${#numbers.sequence(pagevo.startPage, pagevo.endPage)}">
+					<a class="page" th:href="@{'/allview?page=' + ${idx}}"> <span th:if="${idx == pagevo.page }">[</span> <span th:text="${idx}">idx</span>
 						<span th:if="${idx == pagevo.page}">]</span>
 					</a>
 				</div>

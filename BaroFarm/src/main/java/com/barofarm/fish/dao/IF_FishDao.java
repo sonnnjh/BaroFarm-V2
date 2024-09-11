@@ -24,5 +24,6 @@ public interface IF_FishDao {
 
 	public int getTotalCount() throws Exception;
 	public void chkDelete(List<Integer> chkDelete);
+	public void chkDeleteinfo(List<Integer> chkDelete);
 	public List<FishVo> excelview() throws Exception;
 }

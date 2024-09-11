@@ -54,6 +54,7 @@ public class FishController {
 	}
 	pagevo.setTotalCount(fService.getTotalCount());
 	List<FishVo> fVo = fService.allview(pagevo);
+	pagevo.prt();
 	model.addAttribute("pagevo",pagevo);
 	model.addAttribute("allList",fVo);
 	return "allview";
@@ -147,9 +148,16 @@ public class FishController {
 	
 	//선택삭제 
 	@PostMapping("checkProduct")
-	public String chkDelete(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
+	public String chkDelete(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {		
 		fService.chkDelete(chkDelete);
 		return "redirect:/allview";
+	}
+	
+	@PostMapping("checkinfo")
+	public String chkDeleteinfo(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
+		fService.chkDeleteinfo(chkDelete);
+		
+		return "redirect:/info"; 
 	}
 	
 	// 엑셀 다운로드 

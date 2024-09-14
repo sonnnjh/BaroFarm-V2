@@ -88,9 +88,11 @@
 	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">
 		 select * from info where infoNo=#{infoNo}
 	</select>
-	<update id="infoMod">
+	<select id="infoMod" resultType="com.barofarm.fish.vo.infoVo">
+		select * from info where infoNo=#{infoNo}
+	</select>
+	<update id="infoModSave" parameterType="com.barofarm.fish.vo.infoVo">
 		update info set infoTitle=#{infoTitle}, infoText=#{infoText} where infoNo=#{infoNo}
 	</update>
-
 	
 </mapper>

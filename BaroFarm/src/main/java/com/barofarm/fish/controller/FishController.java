@@ -168,21 +168,30 @@ public class FishController {
 	@GetMapping("/infoDetail/{infoNo}")
 	public String infoDetail(Model model, @PathVariable("infoNo") String infoNum) throws Exception {
 		infoVo infoVo = fService.infoDetail(infoNum);
+		System.out.println("디테일 뷰" +infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
 		model.addAttribute("infoVo", infoVo);
 		return "infoDetail";
 	}
+	//공지사항 수정하기 
 	@GetMapping("/infoMod/{infoNo}")
 	public String infoMod(Model model, @PathVariable("infoNo") String infoNum) throws Exception{
 		infoVo infoVo = fService.infoMod(infoNum);
+		System.out.println("수정 뷰" + infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
 		model.addAttribute("infoVo", infoVo);
 		return "infoMod";
+	}
+	//공지사항 수정사항 저장하기 
+	@GetMapping("/infoModSave")
+	public String infoModSave(@ModelAttribute infoVo infoVo) throws Exception{
+		fService.infoModSave(infoVo);
+		return "redirect:/info";
 	}
 	
 	@PostMapping("checkinfo")
 	public String chkDeleteinfo(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
 		fService.chkDeleteinfo(chkDelete);
 		
-		return "redirect:/info"; 
+		return "info"; 
 	}
 	
 	// 엑셀 다운로드 

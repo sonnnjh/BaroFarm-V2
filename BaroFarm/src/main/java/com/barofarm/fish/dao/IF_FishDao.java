@@ -29,4 +29,5 @@ public interface IF_FishDao {
 	public void infoAdd(infoVo infoVo)throws Exception;
 	public infoVo infoDetail(String infoNum)throws Exception;
 	public infoVo infoMod(String infoNum)throws Exception;
+	public void infoModSave(infoVo infoVo)throws Exception;
 }

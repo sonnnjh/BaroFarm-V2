@@ -105,4 +105,9 @@ public class FishDaoImpl implements IF_FishDao{
 		return sqlsession.selectOne(mapperQuery+".infoMod", infoNum);
 	}
 
+	@Override
+	public void infoModSave(infoVo infoVo) throws Exception {
+		sqlsession.update(mapperQuery+".infoModSave", infoVo);
+	}
+
 }

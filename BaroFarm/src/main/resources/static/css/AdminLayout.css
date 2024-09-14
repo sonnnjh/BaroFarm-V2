@@ -109,7 +109,12 @@ main input[type="submit"], main input[type="button"]{
 	color: white;
 	padding: 0.5rem;
 }
-
+.textarea{
+	color: rgb(44,74,58);
+	font-size: 1.1rem;
+	transition:border-color 0.3s ease-in-out;
+	border:solid 2px rgb(44,74,58);
+}
 main .m3 select{
 	border:solid 2px rgb(44,74,58);
 	width: 100%;

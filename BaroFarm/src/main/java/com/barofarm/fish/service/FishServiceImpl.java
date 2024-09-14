@@ -111,5 +111,10 @@ public class FishServiceImpl implements IF_FishService{
 		return fDao.infoMod(infoNum);
 	}
 
+	@Override
+	public void infoModSave(infoVo infoVo) throws Exception {
+		fDao.infoModSave(infoVo);		
+	}
+
 	
 }

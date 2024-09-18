@@ -51,7 +51,7 @@ public class PageVO {
 
 	private void calcPage() {
 		// DB쿼리에서 사용... 시작데이터번호 = (jsp클릭한 페이지번호-1)*페이지당 보여지는 개수
-		startNo = (this.page - 1) * perPageNum +1;  // 6페이지 일 경우 시작글번호가 50부터..
+		startNo = (this.page - 1) * perPageNum;  // 6페이지 일 경우 시작글번호가 50부터..
 		// page변수는 현재 jsp에서 클릭한 페이지번호
 		int tempEnd = (int) (Math.ceil(page / (double) this.perPageNum) * this.perPageNum);
 		                                // 6/10=0.6  > 1   10
@@ -70,7 +70,7 @@ public class PageVO {
 			if(endPage!=page) {
 				this.endNo = startNo + this.perPageNum - 1;	
 			}else {
-				this.endNo = startNo + this.totalCount % 10 - 1;
+				 this.endNo = startNo + Math.min(this.perPageNum - 1, this.totalCount - startNo);
 			}
 		} else {
 			// 클릭한 page번호로 계산된 게시물수가 실제게시물개수 totalCount 작을때
@@ -82,6 +82,18 @@ public class PageVO {
 		this.prev = this.startPage != 1;// 시작페이지 1보다 크면 무조건 이전 페이지가 있음. true
 		this.next = this.endPage * this.perPageNum < this.totalCount;
 		// 클릭한 page번호로 계산된 게시물수가 실제 게시물 개수보다 작다면 다음페이지가 있음. true
+		
+		if (this.totalCount == 0) {
+	        // 전체 데이터가 없을 때, 기본 값 설정
+	        this.page = 1;
+	        this.startPage = 1;
+	        this.endPage = 1;
+	        this.startNo = 0;
+	        this.endNo = 0;
+	        this.prev = false; // 이전 페이지는 없음
+	        this.next = false; // 다음 페이지는 없음
+	        return; // 더 이상 계산하지 않음
+	    }
 	}
 
 	public int getTotalCount() {
@@ -135,7 +147,7 @@ public class PageVO {
 
 	public int getStartNo() {
 		
-		return startNo-1;
+		return startNo;
 	}
 
 	public void setStartNo(int startNo) {

@@ -21,7 +21,7 @@
 		product_no asc
 		offset #{startNo} rows fetch next #{perPageNum} rows
 		only -->	
-		SELECT * FROM product ORDER BY product_no DESC LIMIT #{perPageNum} OFFSET #{startNo}
+		select * FROM product ORDER BY product_no DESC LIMIT #{perPageNum} OFFSET #{startNo}
 	</select>
 	
 	<select id="selectinfo" resultType="com.barofarm.fish.vo.infoVo">
@@ -82,7 +82,7 @@
 	</delete>
 	
 	<insert id="infoInsert" parameterType="com.barofarm.fish.vo.infoVo">
-		INSERT into info values (null, #{infoTitle}, #{infoText}, now() )
+		insert into info values (null, #{infoTitle}, #{infoText}, now() )
 
 	</insert>
 	<select id="infoDetail" resultType="com.barofarm.fish.vo.infoVo">

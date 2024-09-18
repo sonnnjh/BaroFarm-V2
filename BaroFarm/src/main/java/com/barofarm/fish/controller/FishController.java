@@ -161,7 +161,6 @@ public class FishController {
 	@PostMapping("infoAddSave")
 	public String infoAddSave(@ModelAttribute infoVo infoVo) throws Exception {
 		fService.infoAdd(infoVo);
-		
 		return "redirect:/info";
 	}
 	//공지사항 자세히보기 
@@ -190,7 +189,6 @@ public class FishController {
 	@PostMapping("checkinfo")
 	public String chkDeleteinfo(Model model, @RequestParam ("checkList")  List<Integer> chkDelete) {
 		fService.chkDeleteinfo(chkDelete);
-		
 		return "info"; 
 	}
 	

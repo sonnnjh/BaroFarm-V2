@@ -22,6 +22,7 @@
 				<form action="/infoModSave" method="get">
 					<div><input type="text" name="infoTitle" th:value="${infoVo.infoTitle}" ></div>
 					<div><textarea name="infoText" th:text="${infoVo.infoText}" class="textarea"></textarea></div>
+					<input type="hidden" name="infoNo" th:value="${infoVo.infoNo}">
 					<div><input type ="submit" value="저장하기"></div>
 				</form>
 			</div>

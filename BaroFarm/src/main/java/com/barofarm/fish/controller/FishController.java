@@ -167,7 +167,7 @@ public class FishController {
 	@GetMapping("/infoDetail/{infoNo}")
 	public String infoDetail(Model model, @PathVariable("infoNo") String infoNum) throws Exception {
 		infoVo infoVo = fService.infoDetail(infoNum);
-		System.out.println("디테일 뷰" +infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
+//		System.out.println("디테일 뷰" +infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
 		model.addAttribute("infoVo", infoVo);
 		return "infoDetail";
 	}
@@ -175,7 +175,7 @@ public class FishController {
 	@GetMapping("/infoMod/{infoNo}")
 	public String infoMod(Model model, @PathVariable("infoNo") String infoNum) throws Exception{
 		infoVo infoVo = fService.infoMod(infoNum);
-		System.out.println("수정 뷰" + infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
+//		System.out.println("수정 뷰" + infoVo.getInfoNo() + infoVo.getInfoText() + infoVo.getInfoTitle());
 		model.addAttribute("infoVo", infoVo);
 		return "infoMod";
 	}

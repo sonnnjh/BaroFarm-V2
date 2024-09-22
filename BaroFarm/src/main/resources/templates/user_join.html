@@ -10,22 +10,29 @@
 <link th:href="@{/css/user_join.css}" rel="stylesheet" type="text/css"/>
 
 
-
 <body>
 
 <font class="title"> 회원 가입 </font>
 <hr class="hr">
 
 	<form action="userJoin" method="post">
-			<input type="text" name="user_id" placeholder="아이디" oninput="checkId()" id="user_id" required><br>
+			<input type="text" name="user_id" placeholder="아이디를 입력하세요." oninput="checkId()" id="user_id" required><br>
 															<!-- onblur="checkId()" 가능하다.  -->
 			<span class ="id_ok">사용 가능한 아이디 입니다.</span>
 			<span class ="id_already">이미 사용중인 아이디 입니다.</span>
 															
-	  	 	<input class="a1" type ="password" name="user_pass" placeholder="비밀번호" required> <br> 
-			<input class="a1" type ="text" name="user_name" placeholder="이름" required> <br>
-			<input class="a1" type ="text" name="user_email" placeholder="이메일" required><br>			
-			<input class="a1" type ="text" name="user_phone" placeholder="연락처" required> <br>				
+	  	 	<input class="a1" type ="password" name="user_pass" placeholder="6자 이상의 비밀번호를 입력하세요." required id="user_pw"> <br> 
+	  	 	
+	  	 	<span class="pw">비밀번호를 6자 이상 입력해주세요.</span> 
+	  	 	
+			<input class="a1" type ="text" name="user_name" placeholder="이름을 입력하세요." required> <br>
+			<input class="a1" type ="text" name="user_email" placeholder="이메일을 입력하세요." required id="user_email"><br>		
+			
+			<span class="email">이메일 형식을 맞춰 입력해주세요.</span>	
+			
+			<input class="a1" type ="text" name="user_phone" placeholder="휴대번호를 입력하세요." required id="user_phone" maxlength="13"> <br>
+			
+			<span class="phone">휴대번호 13자리를 입력하세요.</span>
 
 			<div>
 				<label>성별

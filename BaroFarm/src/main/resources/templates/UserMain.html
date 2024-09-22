@@ -6,9 +6,11 @@
 </head>
 <link rel="stylesheet" type="text/css" th:href="@{css/UserMain.css}">
 <body>
+
 	<header th:replace="~{UserLayout::header}"></header>
 	<nav th:replace="~{UserLayout::nav}"></nav>
 	<main>
+		
 		<div class="mainImg">
 			<img src="/img/밭1.jpg" alt="메인사진" class="mainImg">
 		</div>
@@ -45,5 +47,29 @@
 			<img alt="" th:src="@{img/농부2.jpg}"class="m4_img">
 		</div>
 	</main>
+	<div class="black-bg">
+			<div class="white-bg">
+				<font class="title"> 회원 가입 </font>
+				<hr class="hr">
+					<form action="userJoin" method="post">
+						<input type="text" name="user_id" placeholder="아이디" oninput="checkId()" id="user_id" required><br>
+																		<!-- onblur="checkId()" 가능하다.  -->
+						<span class ="id_ok">사용 가능한 아이디 입니다.</span>
+						<span class ="id_already">이미 사용중인 아이디 입니다.</span>
+																		
+				  	 	<input class="a1" type ="password" name="user_pass" placeholder="비밀번호" required> <br> 
+						<input class="a1" type ="text" name="user_name" placeholder="이름" required> <br>
+						<input class="a1" type ="text" name="user_email" placeholder="이메일" required><br>			
+						<input class="a1" type ="text" name="user_phone" placeholder="연락처" required> <br>				
+						<div>
+							<label>성별
+								<input type ="radio" name="user_gender" value="남자" required>남자 
+								<input type ="radio" name="user_gender" value="여자">여자<br>				
+							</label><br>
+								<button type="submit" value="회원 등록">회원등록</button>
+						</div>
+					</form>
+			</div>
+		</div>
 </body>
 </html>

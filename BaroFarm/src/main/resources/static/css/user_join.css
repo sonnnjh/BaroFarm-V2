@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 body {
 	text-align: center;
 }
@@ -15,14 +14,16 @@ body {
 	border: none;
 }
 
-.id_already{
+.id_already, .pw, .email, .phone{
 	color:#6A82FB;
 	display:none;
 }
 .id_ok{
 	color: #008000;
 	display: none;
-
+}
+.pw_ok, .email_ok, .phone_ok{
+	display: block;
 }
 
 button {

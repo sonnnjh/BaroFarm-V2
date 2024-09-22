@@ -25,13 +25,21 @@
 	</form>
 	</div>
 	<script type="text/javascript">
+		let userid = document.getElementById('user_id').value;
+		let userpw = document.getElementById('user_pw').value;
 	
-		document.getElementById('login-bt').addEventListener('click', function(){
-			var userid = document.getElementById('user_id').value;
+		document.getElementById('login-bt').addEventListener('click', function(e){
 			if(userid === "") {
-				window.alert("Id와 Password를 입력하세요");
+				e.preventDefault(); /*form전송 막는 함수.*/
+				alert("아이디를 입력하세요.");
+			}else if(userpw === ""){
+				e.preventDefault(); /*form전송 막는 함수.*/
+				alert("비밀번호를 입력하세요.");
+			}else if(userpw.value.length<7){
+				e.preventDefault(); /*form전송 막는 함수.*/
+				alert("비밀번호는 6자 이상입니다.");
 			}
 		})
 	</script>
 </body>
-</html> 
+</html>

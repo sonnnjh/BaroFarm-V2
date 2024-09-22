@@ -30,4 +30,29 @@ function checkId() {
     });
 }
 
+document.getElementById('user_pw').addEventListener('input',function(){
+	if(document.getElementById('user_pw').value.length<6){
+		document.getElementsByClassName('pw')[0].classList.add('pw_ok');
+	}else{
+		document.getElementsByClassName('pw')[0].classList.remove('pw_ok');
+	}
+})
+document.getElementById('user_email').addEventListener('input',function(){
+	if(document.getElementById('user_email').value.includes('@')){
+		document.getElementsByClassName('email')[0].classList.remove('email_ok');
+	}else{
+		document.getElementsByClassName('email')[0].classList.add('email_ok');
+	}
+})
+document.getElementById('user_phone').addEventListener('input',function(){
+	document.getElementById('user_phone').value = document.getElementById('user_phone').value.replace(/[^0-9]/g, '') // 숫자를 제외한 모든 문자 제거
+	.replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, `$1-$2-$3`)//3자리,4자리,4자리로 그룹짓기.
+	.replace(/(\-{1,2})$/g, "")//해당범위 사이에 하이픈이 즉시 생성됨.
+	if(document.getElementById('user_phone').value.length < 13){
+		document.getElementsByClassName('phone')[0].classList.add('phone_ok');
+	}else{
+		document.getElementsByClassName('phone')[0].classList.remove('phone_ok');
+	}
 	
+})
+

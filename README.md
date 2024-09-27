@@ -1,4 +1,4 @@
-#BaroFarm-Ver2 소개
+# BaroFarm-Ver2 소개
 
 바로팜 페이지에 추가 기능 개발을 위한 리포리토지입니다.
 

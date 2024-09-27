@@ -1,4 +1,4 @@
-<img width="1434" alt="image" src="https://github.com/user-attachments/assets/214fc47a-2936-4325-a0c1-c9480c86c911"># BaroFarm-Ver2 소개
+#BaroFarm-Ver2 소개
 
 바로팜 페이지에 추가 기능 개발을 위한 리포리토지입니다.
 

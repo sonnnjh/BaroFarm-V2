@@ -1,10 +1,11 @@
-# BaroFarm-Ver2 소개
+<img width="1434" alt="image" src="https://github.com/user-attachments/assets/214fc47a-2936-4325-a0c1-c9480c86c911"># BaroFarm-Ver2 소개
 
 바로팜 페이지에 추가 기능 개발을 위한 리포리토지입니다.
 
 
 # 🚀URL
 http://www.barofarm.shop:8080/
+
 GCP 무료기간 만료 이슈로인한 잠정 중단 죄송합니다...
 
 
